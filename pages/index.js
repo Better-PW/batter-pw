@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css'
+import Batch from '../components/Batch'
 import Image from 'next/image'
 
 export default function Home() {
@@ -19,7 +20,16 @@ export default function Home() {
         </div>
       </nav>
       {/* batches and stuff */}
-      
+      <div style={{backgroundColor: "#e8e8e8"}} className='batches-page'>
+        <div className="options">
+          
+        </div>
+        <hr />
+        <Batch image="/../public/batch.jpg" />
+        <Batch image="/../public/batch1.jpg" />
+        <Batch image="/../public/batch2.jpg" />
+        <Batch image="/../public/batch3.jpg" />
+      </div>
 
       <script src="https://kit.fontawesome.com/d3e43fefda.js" crossorigin="anonymous"></script>
     </div>
