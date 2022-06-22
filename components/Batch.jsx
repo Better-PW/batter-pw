@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Batch(props) {
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-2xl inline-block ml-4">
+        <div className="max-w-sm rounded hover:cursor-pointer overflow-hidden shadow-2xl inline-block ml-10">
             <img className="w-full" src={props.img} alt="batch image" />
                 <div className="px-6 py-4">
                     <div className="font-bold text-xl mb-2">{props.name}</div>
