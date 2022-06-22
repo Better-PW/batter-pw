@@ -21,12 +21,20 @@ export default function Home() {
       </nav>
       {/* batches and stuff */}
       <div style={{ backgroundColor: "#e8e8e8", height: "150vh" }} className='batches-page'>
-        <div className="options">
-
-        </div> {/* https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg */}
+        <div className="options relative">
+          <div className='search-bar inline'>
+            <input className='mt-5 placeholder:italic bg-grey-300 placeholder:text-grey' style={{borderRadius: "26px", width: "20rem" ,height: "2rem"}} type="text" placeholder="Search batches here"></input>
+          </div>
+          <div className='toggle-button inline'>
+            <label className={styles.switch}>
+              <input type="checkbox" />
+              <span className={`${styles.slider} ${styles.round} float-right`}></span>
+            </label>
+          </div>
+        </div>
         <hr />
-        <div style={{paddingLeft: "10%"}} className='batches relative px-20 mt-10 relative'>
-          <Batch name="Lakshya JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg"/>
+        <div style={{ paddingLeft: "10%" }} className='batches relative px-20 mt-10 relative'>
+          <Batch name="Lakshya JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <Batch name="Lakshya NEET" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <Batch name="Arjuna JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <br />
