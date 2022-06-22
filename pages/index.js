@@ -20,25 +20,25 @@ export default function Home() {
         </div>
       </nav>
       {/* batches and stuff */}
-      <div style={{ backgroundColor: "#e8e8e8", height: "100vh" }} className='batches-page'>
+      <div style={{ backgroundColor: "#e8e8e8", height: "150vh" }} className='batches-page'>
         <div className="options">
 
-        </div>
+        </div> {/* https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg */}
         <hr />
         <div style={{paddingLeft: "10%"}} className='batches relative px-20 mt-10 relative'>
-          <Batch img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" name="Lakshya JEE"/>
-          <Batch name="Lakshya NEET" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
-          <Batch name="Arjuna JEE" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Lakshya JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg"/>
+          <Batch name="Lakshya NEET" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
+          <Batch name="Arjuna JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <br />
           <br />
-          <Batch name="Arjuna NEET" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
-          <Batch name="Umeed Batch" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
-          <Batch name="Another Batch" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Arjuna NEET" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
+          <Batch name="Umeed Batch" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
+          <Batch name="Another Batch" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <br />
           <br />
-          <Batch name="Lakshya JEE" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
-          <Batch name="Arjuna 2.0" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
-          <Batch name="Arjuna 2.0" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Lakshya JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
+          <Batch name="Arjuna 2.0" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
+          <Batch name="Arjuna 2.0" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
         </div>
       </div>
 
