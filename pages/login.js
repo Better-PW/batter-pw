@@ -72,7 +72,7 @@ export default function Login() {
         <button className="mx-2 p-3 px-7 bg-btn rounded-lg drop-shadow-2xl text-white" onClick={verifyOtp}>LOGIN</button>
       </div>
       <div className={"flex flex-row justify-center " + (sentOtp ? "invisible" : "visible")}> {/* no phone number -> show phone number input */}
-        <input className="w-64 mx-2 px-5 bg-gray-300 rounded-lg drop-shadow-xl text-black tracking-wide" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter phone number here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
+        <input className="w-64 mx-2 px-5 bg-gray-300 rounded-lg drop-shadow-xl text-black tracking-wide" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
         <button className="mx-2 p-3 px-5 bg-btn rounded-lg drop-shadow-2xl text-white" onClick={validatePhone}>GET OTP</button>
       </div>
     </div>
