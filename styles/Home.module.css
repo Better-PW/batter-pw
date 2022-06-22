@@ -12,6 +12,24 @@
   align-items: center;
 }
 
+.batchImage {
+  border-radius: 26px;
+  transition: 0.5s;
+}
+
+.batchImage:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  transform: translateY(-2px);
+}
+
+.bar {
+  display: block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
 .footer {
   display: flex;
   flex: 1;
