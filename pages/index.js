@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <script src="https://kit.fontawesome.com/d3e43fefda.js" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/d3e43fefda.js" crossOrigin="anonymous"></script>
     </div>
   )
 }
