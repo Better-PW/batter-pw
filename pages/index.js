@@ -12,8 +12,8 @@ export default function Home() {
             <li style={{ marginLeft: "20px", marginTop: "7px"  }} className='navbar-item hover:cursor-pointer inline-block pt-2'><i style={{ fontSize: "35px" }} className="fa-solid fa-bars"></i></li>
             <div style={{ marginLeft: "38%" }} className="inline-block">
               <div style={{ marginLeft: "0" }} className="inline-block">
-                <li style={{ marginLeft: "8px" }} className='navbar-item text-3xl font-bold inline-block hover:cursor-pointer whitespace-normal text-center'>PHYSICS WALLAH</li>
-                <li style={{ marginLeft: "20px", marginTop: "7px"}} className='absolute top-0 right-0 navbar-item inline-block hover:cursor-pointer whitespace-normal mr-5'><Image src="/../public/pw_dark.png" width={45} height={50} /></li>
+                <li style={{ marginLeft: "8px"}} className='navbar-item text-3xl font-bold inline-block hover:cursor-pointer whitespace-normal text-center'>PHYSICS WALLAH</li>
+                <li style={{ marginLeft: "20px", marginTop: "3px"}} className='absolute top-0 right-0 navbar-item inline-block hover:cursor-pointer whitespace-normal mr-5'><Image src="/../public/pw_dark.png" width={35} height={40} /></li>
               </div>
             </div>
           </ul>
