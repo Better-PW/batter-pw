@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import axios from 'axios';
+// import axios from 'axios';
 import { useRouter } from 'next/router';
 
 export default function Login() {
