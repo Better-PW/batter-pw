@@ -4,6 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#phone::placeholder{
+#inp-f::placeholder{
   color: #696969
 }
