@@ -10,8 +10,9 @@ export default function Login() {
   const router = useRouter();
 
   const validatePhone = () => {
-    const phoneRegex = /^\d{10}$/;
+    const phoneRegex = /^[6789][0-9]{9}$/;
     const validity = phoneRegex.test(phone.toString());
+    console.log(validity);
     if (validity) {
       getOtp();
     }
@@ -43,11 +44,12 @@ export default function Login() {
       const res = await axios.post(endpoint, payload);
       if (res.status === 200 && res.data.success) {
         var data = {
-          access_token: res.data.access_token,
-          expires_in: res.data.expires_in,
-          refresh_token: res.data.refresh_token,
-          token_id: res.data.tokenId
+          access_token: res.data.data.access_token,
+          expires_in: res.data.data.expires_in,
+          refresh_token: res.data.data.refresh_token,
+          token_id: res.data.data.tokenId
         }
+        console.log(data);
         localStorage.setItem("isLoggedIn", true);
         localStorage.setItem("login-data", JSON.stringify(data));
         router.push("/batches")
