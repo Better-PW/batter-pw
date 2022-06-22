@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <div>
       {/* navbar code */}
-      <nav style={{ boxShadow: "0 2px 2px -2px rgba(0,0,0,.2)" }} id="header">
+      <nav style={{ boxShadow: "0 2px 2px -2px rgba(0,0,0,.2)"}} id="header">
         <div className='nav-items relative pb-4'>
           <ul className='items'>
-            <li style={{ marginLeft: "20px" }} className='navbar-item hover:cursor-pointer inline-block pt-2'><i style={{ fontSize: "40px" }} className="fa-solid fa-bars"></i></li>
+            <li style={{ marginLeft: "20px", marginTop: "7px"  }} className='navbar-item hover:cursor-pointer inline-block pt-2'><i style={{ fontSize: "35px" }} className="fa-solid fa-bars"></i></li>
             <div style={{ marginLeft: "38%" }} className="inline-block">
               <div style={{ marginLeft: "0" }} className="inline-block">
-                <li style={{ marginLeft: "20px" }} className='navbar-item text-3xl font-bold inline-block hover:cursor-pointer whitespace-normal text-center'>PHYSICS WALLAH</li>
-                <li style={{ marginLeft: "20px" }} className='absolute top-0 right-0 navbar-item inline-block hover:cursor-pointer whitespace-normal mr-5'><Image src="/../public/pw_dark.png" width={60} height={60} /></li>
+                <li style={{ marginLeft: "8px" }} className='navbar-item text-3xl font-bold inline-block hover:cursor-pointer whitespace-normal text-center'>PHYSICS WALLAH</li>
+                <li style={{ marginLeft: "20px", marginTop: "7px"}} className='absolute top-0 right-0 navbar-item inline-block hover:cursor-pointer whitespace-normal mr-5'><Image src="/../public/pw_dark.png" width={45} height={50} /></li>
               </div>
             </div>
           </ul>
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </div>
         <hr />
-        <div style={{ paddingLeft: "10%" }} className='batches relative px-20 mt-10 relative'>
+        <div style={{ paddingLeft: "8%" }} className='batches relative px-20 mt-10 relative'>
           <Batch name="Lakshya JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <Batch name="Lakshya NEET" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
           <Batch name="Arjuna JEE" img="https://i.ytimg.com/vi/T8pCYpAMY4o/maxresdefault.jpg" />
