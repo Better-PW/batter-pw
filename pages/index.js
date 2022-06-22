@@ -25,20 +25,20 @@ export default function Home() {
 
         </div>
         <hr />
-        <div style={{paddingLeft: "10%"}} className='batches relative px-20 mt-10'>
-          <Batch image="/../public/batch.jpg" />
-          <Batch image="/../public/batch1.jpg" />
-          <Batch image="/../public/batch2.jpg" />
+        <div style={{paddingLeft: "10%"}} className='batches relative px-20 mt-10 relative'>
+          <Batch img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" name="Lakshya JEE"/>
+          <Batch name="Lakshya NEET" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Arjuna JEE" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
           <br />
           <br />
-          <Batch image="/../public/batch3.jpg" />
-          <Batch image="/../public/batch2.jpg" />
-          <Batch image="/../public/batch1.jpg" />
+          <Batch name="Arjuna NEET" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Umeed Batch" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Another Batch" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
           <br />
           <br />
-          <Batch image="/../public/batch1.jpg" />
-          <Batch image="/../public/batch2.jpg" />
-          <Batch image="/../public/batch3.jpg" />
+          <Batch name="Lakshya JEE" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Arjuna 2.0" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+          <Batch name="Arjuna 2.0" img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
         </div>
       </div>
 

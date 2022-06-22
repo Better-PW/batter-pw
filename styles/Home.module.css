@@ -23,6 +23,23 @@
   transform: translateY(-2px);
 }
 
+.batch-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
 .bar {
   display: block;
   -webkit-transition: all 0.3s ease-in-out;
