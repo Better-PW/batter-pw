@@ -172,19 +172,15 @@ input:checked + .slider:before {
 .slider.round {
   border-radius: 34px;
 }
-<<<<<<< HEAD
 
 /* login page styling */
-.slider.round:before {
-  border-radius: 50%;
-}
 
 .totalClicks {
   display: none;
 }
-=======
-
->>>>>>> 408c34b2b0e6743832ae9d96bc02d8d1cd19ce08
+.slider.round:before {
+  border-radius: 50%;
+}
 
 /* batch card styling */
 
