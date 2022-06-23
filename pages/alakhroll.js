@@ -3,20 +3,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Easter() {
-    // const useAudio = url => {
-    //     const [audio] = useState(new Audio(url))
-    //     const [play, setPlay] = useState(false)
-
-    //     useEffect(()=>{
-    //         play ? audio.play() : audio.pause()
-    //     }, [play])
-
-    //     useEffect(()=>{
-    //         window.onload = ()=>{
-    //             setPlay(true);
-    //         }
-    //     }, [])
-    // }
     const [audio, setAudio] = useState(null)
     useEffect(() => {
         setAudio(new Audio("/media/rickroll.mp3").play())
