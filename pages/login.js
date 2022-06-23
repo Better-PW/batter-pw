@@ -68,7 +68,7 @@ export default function Login() {
     if (clicks < 3){
       document.querySelector(".clickText").style.display="inline"
     } else if (clicks === 10 || clicks > 10){
-      document.querySelector(".pw-image").classList.add("animate-spin");
+      document.querySelector(".h-screen").classList.add("animate-spin");
     }
   }
 
