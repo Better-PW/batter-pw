@@ -15,7 +15,7 @@ export default function Options() {
             </div>
             {/* toggle */}
             <div title="toggle dark mode" className={`${styles.toggleButton} ml-5 mt-1 mx-1 toggle-button inline drop-shadow-3xl`}>
-                <label class="label">
+                <label>
                     <div className={styles.toggle}>
                         <input className={styles.toggleState} type="checkbox" name="check" value="check" />
                         <div className={styles.indicator}></div>
