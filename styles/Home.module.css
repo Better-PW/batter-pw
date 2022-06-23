@@ -12,21 +12,6 @@
   align-items: center;
 }
 
-/* scrollbar styling */
-/* body::-webkit-scrollbar {
-  width: 12px;
-}
-
-body::-webkit-scrollbar-track {
-  background: white;   
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #1A00BB;
-  border-radius: 20px;
-  border: 0.1px solid white;
-} */
-
 /* Options styling */
 
 .searchBtn {
@@ -218,6 +203,9 @@ body::-webkit-scrollbar-thumb {
 .btn__secondary:active {
   box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
 }
+
+/* login page styling */
+
 
 /* batch card styling */
 

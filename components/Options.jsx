@@ -6,11 +6,11 @@ export default function Options() {
         <div className="flex justify-end">
             {/* search bar */}
             <div class={`${styles.search} mr-4`}>
-                <input type="text" class={styles.search__input} spellCheck="false" placeholder="Search for batches" />
-                <div className={`${styles.btn} ${styles.btn__primary}`}><p>Search</p></div>
+                <input style={{borderTopLeftRadius: "0.25rem", borderBottomLeftRadius: "0.25rem"}} type="text" class={styles.search__input} spellCheck="false" placeholder="Search for batches" />
+                <div style={{borderTopRightRadius: "0.25rem", borderBottomRightRadius: "0.25rem"}} className={`${styles.btn} ${styles.btn__primary}`}><p>Search</p></div>
             </div>
             {/* filter button */}
-            <div class={`${styles.btn} ${styles.btn__secondary}`}><p>Filters</p></div>
+            <div style={{borderRadius: "0.25rem"}} class={`${styles.btn} ${styles.btn__secondary}`}><p>Filters</p></div>
             {/* toggle */}
             <div title="toggle dark mode" className={`${styles.toggleButton} ml-5 mt-1 mx-1 toggle-button inline drop-shadow-3xl`}>
                 <div className={`${styles.switch}`}>
