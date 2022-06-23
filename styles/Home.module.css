@@ -12,6 +12,49 @@
   align-items: center;
 }
 
+/* scrollbar styling */
+/* body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: white;   
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1A00BB;
+  border-radius: 20px;
+  border: 0.1px solid white;
+} */
+
+/* Options styling */
+
+.searchBar {
+  border: solid 1px #ccc;
+  transition: 0.5s;
+}
+
+.searchBar:focus {
+  transition: 0.5s;
+  border: solid 1px #1A00BB;
+  outline: none;
+}
+
+.searchBtn {
+  background-color: #1A00BB;
+  color: white;
+  height: 2.7rem;
+  width: 5rem;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.searchBtn:hover {
+  background-color: #3e26da;
+  transition: 0.5s;
+}
+
+
 .filterBtn {
   background-color: #ccc;
   height: 2.7rem;
@@ -21,7 +64,7 @@
 }
 
 .filterBtn:hover {
-  background-color: rgb(176, 170, 170);
+  background-color: #1A00BB; /* rgb(176, 170, 170) */
   transition: 0.5s;
 }
 
@@ -73,11 +116,11 @@
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #1A00BB;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #1A00BB;
 }
 
 input:checked + .slider:before {
@@ -95,6 +138,8 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/* batch card styling */
+
 .batchImage {
   border-radius: 26px;
   transition: 0.5s;
@@ -110,78 +155,7 @@ input:checked + .slider:before {
   opacity: 1;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.bar {
-  display: block;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: white;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+/* default stuff ig */
 
 .grid {
   display: flex;
