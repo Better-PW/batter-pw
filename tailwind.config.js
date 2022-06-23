@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       colors: {
         'btn': '#1A00BB',
+      },
+      animation: {
+        'spin-slow': 'spin 5s linear infinite',
       }
     },
     fontFamily: {
