@@ -5,11 +5,11 @@ import Options from '../components/Options';
 
 export default function Home() {
   const batchList = [];
-  batchList.push(<Batch name="test bastch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test bastch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test bastch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test bastch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test bastch A" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
   return (
     <div>
       <Navbar />
@@ -18,7 +18,7 @@ export default function Home() {
           <Options />
         </div>
 
-        <div className='mx-16 my-10 grid grid-flow-col gap-10'>
+        <div className='mx-16 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>
           {batchList}
         </div>
       </div>
