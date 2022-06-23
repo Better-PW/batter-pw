@@ -68,7 +68,7 @@ export default function Login() {
       <div className="my-3 mb-10 font-light text-xl tracking-widest">
         Padhlo Chahe Kahi Se<br />Selection Hoga Yahi Se
       </div>
-      <div className={"flex flex-row justify-center " + (sentOtp ? "visible" : "invisible")}> {/* has phone number -> login with otp */}
+      <div className={"flex flex-row mt-5 justify-center " + (sentOtp ? "visible" : "invisible")}> {/* has phone number -> login with otp */}
         <input className="w-64 mx-2 px-5 bg-gray-300 rounded-lg drop-shadow-xl text-black tracking-wide placeholder:text-gray-400" type="tel" required minLength="6" maxLength="6" name="otp" placeholder="Enter OTP" pattern="\d*" onChange={(e) => { setOtp(e.target.value) }} />
         <button style={{border: "solid 1px var(--primary-light)" , borderRadius: "0.25rem"}} className={`${styles.btn} ${styles.btn__primary} mx-2 p-3 px-7 rounded-lg drop-shadow-2xl text-white`} onClick={verifyOtp}>LOGIN</button>
       </div>
