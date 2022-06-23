@@ -12,6 +12,29 @@
   align-items: center;
 }
 
+.filterBtn {
+  background-color: #ccc;
+  height: 2.7rem;
+  width: 6rem;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.filterBtn:hover {
+  background-color: rgb(176, 170, 170);
+  transition: 0.5s;
+}
+
+.filterBtn:hover .filterText {
+  color: white;
+  transition: 0.5s;
+}
+
+.filterText {
+  color: rgb(161, 159, 159);
+  transition: 0.5s;
+}
+
 .switch {
   position: relative;
   display: inline-block;
