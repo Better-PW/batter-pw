@@ -65,9 +65,10 @@ export default function Login() {
 
   function handleClick(){
     setClicks(clicks+1);
-    if (clicks > 3){
+    if (clicks > 1){
       document.querySelector(".clickText").style.display="inline"
-    } else if (clicks === 10 || clicks > 10){
+    }
+    if (clicks > 8){
       document.querySelector(".h-screen").classList.add("animate-spin");
     }
   }
