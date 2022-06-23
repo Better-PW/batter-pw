@@ -206,6 +206,9 @@
 
 /* login page styling */
 
+.totalClicks {
+  display: none;
+}
 
 /* batch card styling */
 
