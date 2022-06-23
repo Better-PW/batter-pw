@@ -65,7 +65,7 @@ export default function Login() {
 
   function handleClick(){
     setClicks(clicks+1);
-    if (clicks < 3){
+    if (clicks > 3){
       document.querySelector(".clickText").style.display="inline"
     } else if (clicks === 10 || clicks > 10){
       document.querySelector(".h-screen").classList.add("animate-spin");
@@ -74,8 +74,8 @@ export default function Login() {
 
   return (
     <div className="h-screen bg-white flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
-      <h1 className={`${styles.totalClicks} clickText`}>Clicks: {clicks}</h1>
-      <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image' src="/media/pw_dark.png" width={100} height={110} /></div>
+      <h1 className={`${styles.totalClicks} clickText hidden`}>Clicks: {clicks}</h1>
+      <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer' src="/media/pw_dark.png" width={100} height={110} /></div>
       <div className="text-4xl tracking-widest">Welcome To <span className="font-bold">PHYSICS WALLAH</span></div>
       <div className="my-3 mb-10 font-light text-xl tracking-widest">
         Padhlo Chahe Kahi Se<br />Selection Hoga Yahi Se
