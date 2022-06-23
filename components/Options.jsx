@@ -5,20 +5,23 @@ export default function Options() {
     return (
         <div className="flex justify-end">
             {/* search bar */}
-            <div class={`${styles.search} mr-4`}>
-                <input style={{borderTopLeftRadius: "0.25rem", borderBottomLeftRadius: "0.25rem"}} type="text" class={styles.search__input} spellCheck="false" placeholder="Search for batches" />
-                <div style={{borderTopRightRadius: "0.25rem", borderBottomRightRadius: "0.25rem"}} className={`${styles.btn} ${styles.btn__primary}`}><p>Search</p></div>
+            <div className="ml-5">
+                <input className={`${styles.searchBar} drop-shadow-2xl px-2 mx-1  placeholder:text-gray-400`} style={{ borderRadius: "10px", width: "20rem", height: "2.7rem" }} type="text" placeholder="Search batches here"></input>
+                <button className={styles.searchBtn}>Search</button>
             </div>
             {/* filter button */}
-            <div style={{borderRadius: "0.25rem"}} class={`${styles.btn} ${styles.btn__secondary}`}><p>Filters</p></div>
+            <div className="filter inline ml-5 drop-shadow-2xl">
+                <button className={`${styles.filterBtn}`}><span className={styles.filterText}>Filters</span></button>
+            </div>
             {/* toggle */}
             <div title="toggle dark mode" className={`${styles.toggleButton} ml-5 mt-1 mx-1 toggle-button inline drop-shadow-3xl`}>
-                <div className={`${styles.switch}`}>
-                    <div className={styles.switch__1}>
-                        <input id="switch-1" type="checkbox" />
-                        <label for="switch-1"></label>
+                <label class="label">
+                    <div className={styles.toggle}>
+                        <input className={styles.toggleState} type="checkbox" name="check" value="check" />
+                        <div className={styles.indicator}></div>
                     </div>
-                </div>
+                    <div className={styles.labelText}></div>
+                </label>
             </div>
         </div>
     )

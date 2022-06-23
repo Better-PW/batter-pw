@@ -5,11 +5,11 @@ import Options from '../components/Options';
 
 export default function Home() {
   const batchList = [];
-  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
-  batchList.push(<Batch name="test batch A" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="ARJUNA JEE 2024" thumb_uri="/media/batch.jpg" />)
+  batchList.push(<Batch name="LAKSHYA JEE 2024" thumb_uri="/media/batch1.jpg" />)
+  batchList.push(<Batch name="ARJUNA NEET 2024" thumb_uri="/media/batch2.jpg" />)
+  batchList.push(<Batch name="LAKSHYA JEE 2024" thumb_uri="/media/batch3.jpg" />)
+  batchList.push(<Batch name="SANKALP 2029" thumb_uri="/media/batch.jpg" />)
   return (
     <div>
       <Navbar />
