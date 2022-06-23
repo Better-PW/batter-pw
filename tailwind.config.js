@@ -7,7 +7,6 @@ module.exports = {
     extend: {
       colors: {
         'btn': '#1A00BB',
-        'txt-field': '#F0F0F0'
       }
     },
     fontFamily: {

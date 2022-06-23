@@ -4,6 +4,3 @@
 @tailwind components;
 @tailwind utilities;
 
-#inp-f::placeholder{
-  color: #696969
-}
