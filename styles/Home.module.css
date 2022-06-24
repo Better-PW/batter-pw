@@ -34,41 +34,49 @@ body::-webkit-scrollbar-thumb {
 
 .searchBar:focus {
   transition: 0.5s;
-  border: solid 1px #1A00BB;
+  border: solid 1px #aa9dff;
   outline: none;
 }
 
 .searchBtn {
   background-color: #1A00BB;
   color: white;
-  font-weight: 200;
-  height: 2.7rem;
-  width: 5rem;
-  border-radius: 10px;
+  font-weight: 700;
+  font-size: small;
+  height: 40px;
+  width: 75px;
+  border-radius: 5px;
   transition: 0.5s;
 }
 
 .searchBtn:hover {
-  background-color: #3e26da;
+  background-color: #D2CFFF;
   transition: 0.5s;
 }
 
 
 .filterBtn {
-  background-color: #ccc;
-  height: 2.7rem;
-  width: 6rem;
-  border-radius: 10px;
+  background-color: #1A00BB;
+  height: 40px;
+  width: 75px;
+  font-weight: 700;
+  font-size: small;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.filterBtn .filterText {
+  color: white;
   transition: 0.5s;
 }
 
 .filterBtn:hover {
-  background-color: #1A00BB; /* rgb(176, 170, 170) */
+  background-color: #D2CFFF; /* rgb(176, 170, 170) */
   transition: 0.5s;
 }
 
 .filterBtn:hover .filterText {
-  color: white;
+  color: rgb(0, 0, 0);
   transition: 0.5s;
 }
 
@@ -85,7 +93,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .labelText {
-  margin-left: 16px;
+  margin-left: 15px;
 }
 
 .toggle {
@@ -97,6 +105,7 @@ body::-webkit-scrollbar-thumb {
   border-width: 2px;
   border-color: lightgray;
   overflow: hidden;
+  cursor: pointer;
   /* box-shadow: */
   /*   -8px -4px 8px 0px #ffffff, */
   /*   8px 4px 12px 0px #d1d9e6, */
