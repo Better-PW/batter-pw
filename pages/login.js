@@ -16,7 +16,7 @@ export default function Login() {
   if (!(typeof login == "undefined")) {
     console.log(login);
     if (login) {
-      router.push("/batches");
+      setTimeout(() => { router.push("/batches"); }, 1500);
     }
   }
 

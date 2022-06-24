@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import loggedIn from '../components/LoggedIn';
+import Spinner from '../components/spinner';
 
 
 export default function Home() {
@@ -17,26 +18,22 @@ export default function Home() {
       router.push("/batches");
     }
     if (!login) {
-      router.push("/login");
+      setTimeout(() => { router.push("/login"); }, 1500);
     }
   }
 
-  // useEffect(() => {
-  //   const loggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
-  //   if (loggedIn) {
-  //     router.push("/batches");
-  //   }
-  // }, [])
-
-  return (
-    <>
-      <Navbar />
-      <div className='bg-[#e8e8e8] h-screen'>
-        <div className="flex flex-row p-2 justify-end">
-          <Options />
+  if (!login) { return <Spinner /> }
+  else {
+    return (
+      <>
+        <Navbar />
+        <div className='bg-[#e8e8e8] h-screen'>
+          <div className="flex flex-row p-2 justify-end">
+            <Options />
+          </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }
 
