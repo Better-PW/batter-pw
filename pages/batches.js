@@ -39,6 +39,9 @@ export default function Batches() {
         router.push("/");
         return;
       }
+    } else {
+      router.push("/");
+      return;
     }
     const endpoint = "/api/all-batches";
     const payload = {
