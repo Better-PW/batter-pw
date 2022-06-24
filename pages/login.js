@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import axios from 'axios';
@@ -9,6 +9,13 @@ export default function Login() {
   const [otp, setOtp] = useState(0);
   const [sentOtp, setSentOtp] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const loggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+    if (loggedIn) {
+      router.push("/batches");
+    }
+  }, [])
 
   const validatePhone = () => {
     const phoneRegex = /^[6789][0-9]{9}$/;

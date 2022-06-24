@@ -2,47 +2,31 @@ import axios from 'axios';
 import Batch from '../components/Batch';
 import Navbar from '../components/navbar';
 import Options from '../components/Options';
+import redirectIfNoLogin from '../components/LoginRedirect';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 export default function Batches() {
+  redirectIfNoLogin();
+
   const [gotBatches, setGotBatches] = useState(false);
   const [myBatches, setMyBatches] = useState([]);
   const [batchCards, setBatchCards] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState("dont_know");
-  const router = useRouter();
 
-  // useEffect(() => {
-  //   setIsLoggedIn(localStorage.getItem("isLoggedIn"));
-
-  //   if (typeof isLoggedIn === "string") { return }
-  //   else if (typeof isLoggedIn === "boolean" && !isLoggedIn) {
-  //     router.push("/");
-  //   }
-
-  // }, [isLoggedIn]);
 
   useEffect(() => {
     if (!gotBatches) { getBatches(); }
-  }, [gotBatches]);
+  }, [gotBatches])
 
   useEffect(() => {
-    let c = [];
-    myBatches.forEach((item) => { c.push(<Batch batchJson={item} />) });
-    setBatchCards(c);
+    if (myBatches.length > 0) {
+      let c = [];
+      myBatches.forEach((item) => { c.push(<Batch batchJson={item} />) });
+      setBatchCards(c);
+    }
   }, [myBatches]);
 
   const getBatches = async () => {
     const loginData = JSON.parse(localStorage.getItem("login-data"));
-    if (loginData) {
-      if (!loginData.hasOwnProperty("access_token")) {
-        router.push("/");
-        return;
-      }
-    } else {
-      router.push("/login");
-      return;
-    }
     const endpoint = "/api/all-batches";
     const payload = {
       access_token: loginData.access_token,
