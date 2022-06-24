@@ -2,14 +2,31 @@ import styles from '../styles/Home.module.css'
 import Batch from '../components/Batch'
 import Navbar from '../components/navbar'
 import Options from '../components/Options';
-import redirectIfNoLogin from '../components/LoginRedirect';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import loggedIn from '../components/LoggedIn';
 
 
 export default function Home() {
-  redirectIfNoLogin();
+  const router = useRouter();
+  const login = loggedIn();
+  if (!(typeof login == "undefined")) {
+    console.log(login);
+    if (login) {
+      router.push("/batches");
+    }
+    if (!login) {
+      router.push("/login");
+    }
+  }
+
+  // useEffect(() => {
+  //   const loggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+  //   if (loggedIn) {
+  //     router.push("/batches");
+  //   }
+  // }, [])
 
   return (
     <>

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import loggedIn from '../components/LoggedIn';
+import Spinner from "../components/spinner";
 
 export default function Login() {
   const [phone, setPhone] = useState(0);
@@ -10,12 +12,13 @@ export default function Login() {
   const [sentOtp, setSentOtp] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const loggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
-    if (loggedIn) {
+  const login = loggedIn();
+  if (!(typeof login == "undefined")) {
+    console.log(login);
+    if (login) {
       router.push("/batches");
     }
-  }, [])
+  }
 
   const validatePhone = () => {
     const phoneRegex = /^[6789][0-9]{9}$/;
@@ -78,6 +81,9 @@ export default function Login() {
     if (clicks > 8) {
       document.querySelector(".h-screen").classList.add("animate-spin");
     }
+  }
+  if (login) {
+    return <Spinner />
   }
 
   return (
