@@ -38,7 +38,7 @@ export default function Batches() {
     const loginData = JSON.parse(localStorage.getItem("login-data"));
     if (loginData === null || !loginData.hasOwnProperty("access_token")) {
       localStorage.setItem("isLoggedIn", false);
-      router.push("/login");
+      setTimeout(() => { router.push("/login"); }, 1500);
       return
     }
     const endpoint = "/api/all-batches";
