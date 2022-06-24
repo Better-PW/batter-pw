@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const handler = async (req, res) => {
-  if (req.method !== "POST"){req.status(500);}
+  if (req.method !== "POST") { req.status(500); }
   const phone = req.body.number;
   const endpoint = "https://api.penpencil.xyz/v1/users/get-otp?smsType=0";
   const payload = {

@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins'],
+        'semibold': ['Poppins', '600'],
+      },
       colors: {
         'btn': '#1A00BB',
       },
