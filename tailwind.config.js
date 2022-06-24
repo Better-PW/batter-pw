@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         'btn': '#1A00BB',
       },
+      darkMode: 'class',
       animation: {
         'spin-slow': 'spin 5s linear infinite',
       }

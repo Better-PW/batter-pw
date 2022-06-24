@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Toggle from '../components/Toggle';
 
 export default function Login() {
   const [phone, setPhone] = useState(0);
