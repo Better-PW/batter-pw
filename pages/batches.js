@@ -40,7 +40,7 @@ export default function Batches() {
         return;
       }
     } else {
-      router.push("/");
+      router.push("/login");
       return;
     }
     const endpoint = "/api/all-batches";
