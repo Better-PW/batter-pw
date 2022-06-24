@@ -12,7 +12,7 @@ const handler = async (req, res) => {
     }
 
     const r = await axios.get(endpoint, config);
-    console.log(r.status, r.data);
+    // console.log(r.status, r.data);
     res.status(r.status).json(r.data);
 }
 
