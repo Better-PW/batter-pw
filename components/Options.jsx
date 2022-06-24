@@ -21,7 +21,7 @@ export default function Options() {
                 <button className={`${styles.filterBtn}`}><span className={styles.filterText}>FILTERS</span></button>
             </div>
             {/* toggle */}
-            <div title="toggle dark mode" className={`${styles.toggleButton} mt-2 ml-2 mx-8 pt-5 toggle-button inline drop-shadow-3xl`}>
+            <div title="toggle dark mode" className={`${styles.toggleButton} mt-2 ml-2 sm:mr-8 lg:mr-16 xl:32 pt-5 toggle-button inline drop-shadow-3xl`}>
                 <label>
                     <div className={styles.toggle}>
                         <input className={styles.toggleState} type="checkbox" name="check" value="check" />
