@@ -6,18 +6,15 @@ export default function Options() {
         <div className="flex justify-end">
             {/* search bar */}
             <div className="pt-3 mt-2.5">
-            <div class="flex items-center justify-center">
-                <div class="flex border-2 rounded">
-                    <input type="text" class="px-4 py-2 w-80" placeholder="Search For Batches"/>
-                    <button class="flex items-center justify-center px-4 border-l shadow-2xl bg-[#1B00BA] hover:bg-[#D2CFFF] rounded ease-in-out duration-500">
-                        <svg class="w-6 h-6 text-white sha" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                        </svg>
-                    </button>
+            <form class="flex items-center">   
+                <label for="simple-search" class="sr-only">Search</label>
+                <div class="relative w-full">
+                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full pl-10 p-2.5 dark:bg-gray-1200 dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-800" placeholder="Search For Batches" required=""/>
                 </div>
-            </div>
+            </form>
             </div>
             {/* filter button */}
             <div className="inline drop-shadow-2xl ml-2 mt-3 pt-3">
