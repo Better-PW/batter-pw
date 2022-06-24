@@ -15,45 +15,45 @@ export default function Batches() {
     if (!login) {
       setTimeout(() => { router.push("/login"); }, 1500);
     }
-  } else {
+  }
 
-    const [gotBatches, setGotBatches] = useState(false);
-    const [myBatches, setMyBatches] = useState([]);
-    const [batchCards, setBatchCards] = useState([]);
+  const [gotBatches, setGotBatches] = useState(false);
+  const [myBatches, setMyBatches] = useState([]);
+  const [batchCards, setBatchCards] = useState([]);
 
 
-    useEffect(() => {
-      if (!gotBatches) { getBatches(); }
-    }, [gotBatches])
+  useEffect(() => {
+    if (!gotBatches) { getBatches(); }
+  }, [gotBatches])
 
-    useEffect(() => {
-      if (myBatches.length > 0) {
-        let c = [];
-        myBatches.forEach((item) => { c.push(<Batch batchJson={item} />) });
-        setBatchCards(c);
-      }
-    }, [myBatches]);
+  useEffect(() => {
+    if (myBatches.length > 0) {
+      let c = [];
+      myBatches.forEach((item) => { c.push(<Batch batchJson={item} />) });
+      setBatchCards(c);
+    }
+  }, [myBatches]);
 
-    const getBatches = async () => {
-      const loginData = JSON.parse(localStorage.getItem("login-data"));
-      if (loginData === null || !loginData.hasOwnProperty("access_token")) {
-        localStorage.setItem("isLoggedIn", false);
-        router.push("/login");
-        return
-      }
-      const endpoint = "/api/all-batches";
-      const payload = {
-        access_token: loginData.access_token,
-        bought_batches: true
-      };
-      var res = await axios.post(endpoint, payload);
-      // console.log(res.status, res.data);
-      if (res.status === 200 && res.data.success) {
-        setMyBatches(res.data.data);
-        setGotBatches(true);
-      }
+  const getBatches = async () => {
+    const loginData = JSON.parse(localStorage.getItem("login-data"));
+    if (loginData === null || !loginData.hasOwnProperty("access_token")) {
+      localStorage.setItem("isLoggedIn", false);
+      router.push("/login");
+      return
+    }
+    const endpoint = "/api/all-batches";
+    const payload = {
+      access_token: loginData.access_token,
+      bought_batches: true
+    };
+    var res = await axios.post(endpoint, payload);
+    // console.log(res.status, res.data);
+    if (res.status === 200 && res.data.success) {
+      setMyBatches(res.data.data);
+      setGotBatches(true);
     }
   }
+
 
   if (!login) {
     return <Spinner />
