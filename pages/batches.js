@@ -34,9 +34,11 @@ export default function Batches() {
 
   const getBatches = async () => {
     const loginData = JSON.parse(localStorage.getItem("login-data"));
-    if (!loginData.hasOwnProperty("access_token")) {
-      router.push("/");
-      return;
+    if (loginData) {
+      if (!loginData.hasOwnProperty("access_token")) {
+        router.push("/");
+        return;
+      }
     }
     const endpoint = "/api/all-batches";
     const payload = {
