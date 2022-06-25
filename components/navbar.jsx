@@ -22,7 +22,7 @@ export default function Navbar() {
     }, [])
     return (
         <nav>
-            <div className='p-2 px-10'>
+            <div className='p-2 px-10 shadow-md shadow-black/30 dark:shadow-white/20 drop-shadow-md rounded-md'>
                 <ul className='flex flex-row text-center justify-between items-center font-poppins'>
                     <li className='text-3xl font-semibold w-full tracking-widest'>PHYSICS WALLAH</li>
                     <li className='justify-self-end'><Image src={`/media/pw_${theme}.png`} width={35} height={40} /></li>
