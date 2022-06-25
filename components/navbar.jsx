@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import Options from './Options';
 import GetTheme from './GetTheme';
 
 export default function Navbar() {
@@ -23,9 +24,10 @@ export default function Navbar() {
     return (
         <nav>
             <div className='p-2 px-10 shadow-md shadow-black/30 dark:shadow-white/20 drop-shadow-md rounded-md'>
-                <ul className='flex flex-row text-center justify-between items-center font-poppins'>
-                    <li className='text-3xl font-semibold w-full tracking-widest'>PHYSICS WALLAH</li>
-                    <li className='justify-self-end'><Image src={`/media/pw_${theme}.png`} width={35} height={40} /></li>
+                <ul className='flex flex-row text-center items-center font-poppins pt-1'>
+                    <li className='justify-self-end pl-5 pr-5'><Image src={`/media/pw_${theme}.png`} width={30} height={35} /></li>
+                    <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>
+                    <Options />
                 </ul>
             </div>
         </nav>
