@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Batch({ batchJson }) {
     const router = useRouter();
     const openBatchPage = () => {
-        alert("image batch page opened");
+        alert("Bhai Page Nahi He Abhi");
     }
 
     return (
@@ -13,9 +13,9 @@ export default function Batch({ batchJson }) {
             <div className="rounded-md shadow-xl">
                 <Image className="rounded-md" width={720} height={360} layout="responsive" src={`/api/image-proxy?imageUrl=${batchJson.previewImage.baseUrl}${batchJson.previewImage.key}`} alt={batchJson.name + " Thumbnail"} />
             </div>
-            <div className="flex p-2 justify-around items-center my-auto">
-                <div className="font-semibold font-poppins px-3 text-xl m-2 w-fit">{batchJson.name}</div>
-                <button className="p-2 px-5 bg-btn rounded-lg drop-shadow-2xl text-white font-semibold" onClick={openBatchPage}>EXPLORE</button>
+            <div className="flex py-3 justify-between items-center my-auto">
+                <div className="font-semibold text-xl m-2 w-fit">{batchJson.name}</div>
+                <button className="font-poppins font-semibold p-2.5 px-5 bg-btn rounded-md drop-shadow-2xl text-white" onClick={openBatchPage}>EXPLORE</button>
             </div>
         </div>
     )
