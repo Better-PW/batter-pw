@@ -101,7 +101,7 @@ body::-webkit-scrollbar-thumb {
   isolation: isolate;
   position: relative;
   height: 30px;
-  width: 60px;
+  width: 62px;
   border-radius: 15px;
   border-width: 2px;
   /* border-color: lightslategrey; */
