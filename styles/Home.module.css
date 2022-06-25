@@ -36,6 +36,11 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(203 213 225);
 }
 
+.darkClicked {
+  background-color: #272b2e;
+  color: rgb(72, 72, 72);
+}
+
 /* Options styling */
 
 .searchBar {
