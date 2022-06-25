@@ -29,7 +29,7 @@ export default function Batches() {
   useEffect(() => {
     if (myBatches.length > 0) {
       let c = [];
-      myBatches.forEach((item) => { c.push(<Batch batchJson={item} />) });
+      myBatches.forEach((item) => { c.push(<Batch key={item.slug} batchJson={item} />) });
       setBatchCards(c);
     }
   }, [myBatches]);

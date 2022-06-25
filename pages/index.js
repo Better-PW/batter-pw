@@ -22,7 +22,7 @@ export default function Home() {
     }
   }
 
-  if (!login) { return <Spinner /> }
+  if (!login && !(typeof login == "undefined")) { return <Spinner /> }
   else {
     return (
       <>

@@ -11,7 +11,7 @@ export default function Toggle() {
         <div title="toggle dark mode" className={`${styles.toggleButton}  mt-2 ml-2 mx-8 pt-5 toggle-button inline drop-shadow-3xl`}>
             <label>
                 <div className={styles.toggle}>
-                    <input onClick={() => {
+                    <input onChange={() => {
                         setTheme(theme === 'dark' ? 'light' : 'dark');
                         window.dispatchEvent(new Event('storage'));
                     }} className={styles.toggleState} type="checkbox" name="check" value="check" checked={theme === "dark"} />
