@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Batch({ batchJson }) {
     const router = useRouter();
     const openBatchPage = () => {
-        alert("Bhai Page Nahi He Abhi");
+        alert("Explore page not found :(");
     }
 
     return (

@@ -45,7 +45,7 @@ export default function Batches() {
     const endpoint = "/api/all-batches";
     const payload = {
       access_token: loginData.access_token,
-      bought_batches: true
+      bought_batches: false
     };
     var res = await axios.post(endpoint, payload);
     // console.log(res.status, res.data);

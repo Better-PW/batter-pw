@@ -25,6 +25,17 @@ body::-webkit-scrollbar-thumb {
   border: 0.1px solid white;
 } */
 
+/* Batches button styling */
+
+.buttonText {
+  color: rgb(100, 100, 100);
+  font-weight: 500;
+}
+
+.clicked {
+  background-color: rgb(203 213 225);
+}
+
 /* Options styling */
 
 .searchBar {
