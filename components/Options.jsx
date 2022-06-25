@@ -9,22 +9,22 @@ export default function Options() {
         alert("No filters yet.");
     }
     
-    const [mode, setMode] = useState("sun");
+    const [icon, setIcon] = useState("sun");
 
     function clicked(){
-        if (mode === "sun"){
-            setMode("moon");
-            console.log("Dark Mode Enabled")
-        } else if (mode === "moon") { 
-            setMode("sun"); 
-            console.log("Light Mode Enabled") 
+        if (icon === "sun"){
+            setIcon("moon");
+            console.log("Light Mode Enabled") // moon appears means light mode enabled
+        } else if (icon === "moon") { 
+            setIcon("sun"); 
+            console.log("Dark Mode Enabled") // sun appears means dark mode enabled.
         }
     }
 
     return (
         <div className="pt-2 flex justify-end pb-3.5 ml-auto">
             <div>
-            <div className="pr-3"><Image style={{transition: "0.5s"}} onClick={clicked} className='darkLight hover:cursor-pointer' id="darkLight" src={`/media/dark-light/${mode}.png`} width={40} height={40} /></div>
+            <div className="pr-3"><Image style={{transition: "0.5s"}} onClick={clicked} className='darkLight hover:cursor-pointer' id="darkLight" src={`/media/dark-light/${icon}.png`} width={40} height={40} /></div>
             </div>
             {/* search bar */}
             <div>
