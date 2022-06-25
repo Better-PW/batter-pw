@@ -3,6 +3,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -12,7 +13,6 @@ module.exports = {
       colors: {
         'btn': '#1A00BB',
       },
-      darkMode: 'class',
       animation: {
         'spin-slow': 'spin 5s linear infinite',
       }
