@@ -77,7 +77,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .filterBtn:hover .filterText {
-  color: rgb(0, 0, 0);
+  color: #1A00BB;
   transition: 0.5s;
 }
 
