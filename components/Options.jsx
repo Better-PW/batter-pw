@@ -1,13 +1,31 @@
 import React from "react";
 import styles from '../styles/Home.module.css'
 import Toggle from "./Toggle";
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function Options() {
     function filterClick(){
         alert("No filters yet.");
     }
+    
+    const [mode, setMode] = useState("sun");
+
+    function clicked(){
+        if (mode === "sun"){
+            setMode("moon");
+            console.log("Dark Mode Enabled")
+        } else if (mode === "moon") { 
+            setMode("sun"); 
+            console.log("Light Mode Enabled") 
+        }
+    }
+
     return (
         <div className="pt-2 flex justify-end pb-3.5 ml-auto">
+            <div>
+            <div className="pr-3"><Image style={{transition: "0.5s"}} onClick={clicked} className='darkLight hover:cursor-pointer' id="darkLight" src={`/media/dark-light/${mode}.png`} width={40} height={40} /></div>
+            </div>
             {/* search bar */}
             <div>
                 <form className="flex items-center shadow-lg">
@@ -25,7 +43,7 @@ export default function Options() {
                 <button onClick={filterClick} className={`${styles.filterBtn}`}><span className={styles.filterText}>FILTERS</span></button>
             </div>
             {/* toggle */}
-            <Toggle />
+            {/*<Toggle />*/}
         </div>
     )
 }
