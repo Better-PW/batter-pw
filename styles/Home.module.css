@@ -71,7 +71,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .filterBtn:hover {
-  background-color: #D2CFFF; /* rgb(176, 170, 170) */
+  background-color: #D2CFFF;
+  /* rgb(176, 170, 170) */
   transition: 0.5s;
 }
 
@@ -103,7 +104,7 @@ body::-webkit-scrollbar-thumb {
   width: 60px;
   border-radius: 15px;
   border-width: 2px;
-  border-color: lightgray;
+  /* border-color: lightslategrey; */
   overflow: hidden;
   cursor: pointer;
   /* box-shadow: */
@@ -120,7 +121,7 @@ body::-webkit-scrollbar-thumb {
 .indicator {
   height: 100%;
   width: 200%;
-  background: white;
+  /* background: slategray; */
   border-radius: 15px;
   transform: translate3d(-75%, 0, 0);
   transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
@@ -129,7 +130,7 @@ body::-webkit-scrollbar-thumb {
   /*   8px 4px 12px 0px #d1d9e6; */
 }
 
-.toggleState:checked ~ .indicator {
+.toggleState:checked~.indicator {
   transform: translate3d(25%, 0, 0);
 }
 
@@ -186,6 +187,7 @@ input:checked + .slider:before {
 .totalClicks {
   display: none;
 }
+
 .slider.round:before {
   border-radius: 50%;
 }
@@ -257,6 +259,7 @@ input:checked + .slider:before {
     width: 100%;
     flex-direction: column;
   }
+
   .searchBar {
     width: 3rem;
   }

@@ -18,7 +18,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      'poppins':['Poppins','monospace']
+      'poppins': ['Poppins', 'monospace']
     }
   },
   plugins: [],

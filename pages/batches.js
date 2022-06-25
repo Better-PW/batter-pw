@@ -8,18 +8,18 @@ import { useRouter } from 'next/router';
 import Spinner from '../components/spinner';
 
 export default function Batches() {
+  const [gotBatches, setGotBatches] = useState(false);
+  const [myBatches, setMyBatches] = useState([]);
+  const [batchCards, setBatchCards] = useState([]);
   const router = useRouter();
   const login = loggedIn();
-  // console.log(login);
+  console.log(login);
   if (!(typeof login == "undefined")) {
     if (!login) {
       setTimeout(() => { router.push("/login"); }, 1500);
     }
   }
 
-  const [gotBatches, setGotBatches] = useState(false);
-  const [myBatches, setMyBatches] = useState([]);
-  const [batchCards, setBatchCards] = useState([]);
 
 
   useEffect(() => {
@@ -55,14 +55,14 @@ export default function Batches() {
   }
 
 
-  if (!login) {
+  if (!login && !(typeof login == "undefined")) {
     return <Spinner />
   }
   else {
     return (
-      <>
+      <div>
         <Navbar />
-        <div className='bg-[#e8e8e8] h-screen'>
+        <div className='h-screen'>
           <div className="flex flex-row p-2 justify-end">
             <Options />
           </div>
@@ -70,7 +70,7 @@ export default function Batches() {
             {batchCards}
           </div>
         </div>
-      </>
+      </div >
     )
   }
 }
