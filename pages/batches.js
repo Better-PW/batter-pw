@@ -62,7 +62,7 @@ export default function Batches() {
     return (
       <div>
         <Navbar />
-        <div className='h-screen bg-gray-100 dark:bg-zinc-900'>
+        <div className='h-screen bg-gray-100 dark:bg-[#282828]'>
           <Buttons />
           <div className="flex flex-row p-2 justify-end">
           </div>

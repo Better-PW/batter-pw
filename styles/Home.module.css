@@ -36,11 +36,6 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(203 213 225);
 }
 
-.darkClicked {
-  background-color: #272b2e;
-  color: rgb(72, 72, 72);
-}
-
 /* Options styling */
 
 .searchBar {
@@ -72,7 +67,7 @@ body::-webkit-scrollbar-thumb {
 
 
 .filterBtn {
-  background-color: #1A00BB;
+  background-color: #1a5ec5;
   height: 40px;
   width: 75px;
   font-weight: 700;
@@ -87,13 +82,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .filterBtn:hover {
-  background-color: #D2CFFF;
+  background-color: #fff;
   /* rgb(176, 170, 170) */
   transition: 0.5s;
 }
 
 .filterBtn:hover .filterText {
-  color: #1A00BB;
+  color: #1a5ec5;
   transition: 0.5s;
 }
 
@@ -117,7 +112,7 @@ body::-webkit-scrollbar-thumb {
   isolation: isolate;
   position: relative;
   height: 30px;
-  width: 62px;
+  width: 61px;
   border-radius: 15px;
   border-width: 2px;
   /* border-color: lightslategrey; */

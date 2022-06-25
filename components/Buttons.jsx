@@ -33,14 +33,14 @@ export default function Buttons() {
         }
     })
     return (
-        <div className="pt-5 pl-10">
-            <div style={{ height: "3rem", width: "14rem" }} className="buttonContainer flex bg-gray-400 rounded-lg">
+        <div className="pt-10 pl-8">
+            <div style={{ height: "3rem", width: "14em" }} className="buttonContainer flex bg-gray-400 rounded-[5px]">
                 <div className="container">
                     <div className="btnAll inline">
-                        <button onClick={myBatches} style={{ height: "3rem", width: "7rem" }} className="myBatches focus:bg-gray-300 rounded-lg duration-500 dark:focus:bg-slate-800"><span className={`spanTxt2 ${styles.buttonText}`}>MY BATCHES</span></button>
+                        <button onClick={myBatches} style={{ height: "3rem", width: "7rem" }} className="myBatches focus:bg-gray-300 rounded-[5px] duration-500 dark:focus:bg-slate-800"><span className={`spanTxt2 ${styles.buttonText}`}>MY BATCHES</span></button>
                     </div>
                     <div className="btnMy inline">
-                        <button onClick={allBatches} style={{ height: "3rem", width: "7rem" }} className="allBatches focus:bg-gray-300 rounded-lg duration-500 dark:focus:bg-slate-800"><span className={`spanTxt1 ${styles.buttonText}`}>ALL BATCHES</span></button>
+                        <button onClick={allBatches} style={{ height: "3rem", width: "7rem" }} className="allBatches focus:bg-gray-300 rounded-[5px] duration-500 dark:focus:bg-slate-800"><span className={`spanTxt1 ${styles.buttonText}`}>ALL BATCHES</span></button>
                     </div>
                 </div>
             </div>

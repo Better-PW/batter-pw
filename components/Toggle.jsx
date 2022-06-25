@@ -8,7 +8,7 @@ export default function Toggle() {
     const [gotTheme, setGotTheme] = useState(false);
     const { theme, setTheme } = useTheme();
     return (
-        <div title="toggle dark mode" className={`${styles.toggleButton}  mt-2 ml-2 mx-8 pt-5 toggle-button inline drop-shadow-3xl`}>
+        <div title="toggle dark mode" className={`${styles.toggleButton} ml-2 toggle-button inline  pt-1`}>
             <label>
                 <div className={styles.toggle}>
                     <input onChange={() => {
