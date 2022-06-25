@@ -3,6 +3,9 @@ import styles from '../styles/Home.module.css'
 import Toggle from "./Toggle";
 
 export default function Options() {
+    function filterClick(){
+        alert("No filters yet.");
+    }
     return (
         <div className="flex justify-end">
             {/* search bar */}
@@ -19,7 +22,7 @@ export default function Options() {
             </div>
             {/* filter button */}
             <div className="inline drop-shadow-2xl ml-2 mt-3 pt-3">
-                <button className={`${styles.filterBtn}`}><span className={styles.filterText}>FILTERS</span></button>
+                <button onClick={filterClick} className={`${styles.filterBtn}`}><span className={styles.filterText}>FILTERS</span></button>
             </div>
             {/* toggle */}
             <Toggle />
