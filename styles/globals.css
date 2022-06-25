@@ -4,3 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply dark:bg-[#000000] dark:text-gray-100; 
+    }
+}
