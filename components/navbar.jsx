@@ -25,8 +25,9 @@ export default function Navbar() {
         <nav>
             <div className='p-2'>
                 <ul className='flex flex-row text-center items-center font-poppins pt-1'>
-                    <li className='justify-self-end pl-5 pr-5'><Image src={`/media/pw_${theme}.png`} width={30} height={35} /></li>
-                    <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>
+                        <li className='justify-self-end pl-5 pr-5'><Image src={`/media/pw_${theme}.png`} width={30} height={35} /></li>
+                        <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>
+                        <Options />
                 </ul>
             </div>
         </nav>

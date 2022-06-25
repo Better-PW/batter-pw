@@ -7,7 +7,7 @@ export default function Options() {
         alert("No filters yet.");
     }
     return (
-        <div className="flex justify-end">
+        <div className="flex justify-end ml-auto">
             {/* search bar */}
             <div className="pt-3 mt-2.5">
                 <form className="flex items-center">
