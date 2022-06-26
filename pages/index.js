@@ -1,12 +1,6 @@
-import styles from '../styles/Home.module.css'
-import Batch from '../components/Batch'
-import Navbar from '../components/navbar'
-import Options from '../components/Options';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import loggedIn from '../components/LoggedIn';
 import Spinner from '../components/spinner';
+import { useRouter } from 'next/router';
 
 
 export default function Home() {
@@ -21,19 +15,11 @@ export default function Home() {
       setTimeout(() => { router.push("/login"); }, 1500);
     }
   }
-
-  if (!login && !(typeof login == "undefined")) { return <Spinner /> }
-  else {
-    return (
-      <>
-        <Navbar />
-        <div className='bg-[#e8e8e8] h-screen'>
-          <div className="flex flex-row p-2 justify-end">
-            <Options />
-          </div>
-        </div>
-      </>
-    )
-  }
+  return (
+    <div>
+      <Spinner />
+    </div>
+  )
 }
+
 

@@ -106,11 +106,9 @@ export default function Login() {
       document.querySelector(".h-screen").classList.add("animate-spin");
     }
   }
-  if (login && !(typeof login == "undefined")) {
-    return <Spinner />
-  }
-  else {
-    return (
+
+  return (<div>
+    {!login ?
       <div className="h-screen flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
         <h1 className={`${styles.totalClicks} clickText hidden`}>Clicks: {clicks}</h1>
         <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer' src={`/media/pw_${theme}.png`} width={100} height={110} /></div>
@@ -126,7 +124,7 @@ export default function Login() {
           <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide placeholder:text-gray-400" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
           <button className="mx-2 p-3 px-5 bg-[#1a5ec5] rounded-lg drop-shadow-2xl text-white" onClick={validatePhone}>GET OTP</button>
         </div>
-      </div>
-    )
-  }
+      </div> : <Spinner />}
+  </div>
+  )
 }

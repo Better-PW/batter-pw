@@ -55,22 +55,20 @@ export default function Batches() {
     }
   }
 
-  if (!login && !(typeof login == "undefined")) {
-    return <Spinner />
-  }
-  else {
-    return (
-      <div>
-        <Navbar />
-        <div className='h-screen bg-gray-100 dark:bg-zinc-900'>
-          <Buttons />
-          <div className="flex flex-row p-2 justify-end">
+  return (
+    <>
+      {login ?
+        <div>
+          <Navbar />
+          <div className='h-screen bg-gray-100 dark:bg-[#282828]'>
+            <Buttons />
+            <div className="flex flex-row p-2 justify-end">
+            </div>
+            <div className='mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>
+              {batchCards}
+            </div>
           </div>
-          <div className='mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>
-            {batchCards}
-          </div>
-        </div>
-      </div >
-    )
-  }
+        </div> : <Spinner />}
+    </ >
+  )
 }
