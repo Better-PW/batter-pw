@@ -62,7 +62,6 @@ export default function Batches() {
   function searchHandler(e) {
     const c = [];
     const filteredResults = myBatches.filter((batch) => String(batch.name).toLowerCase().includes(e.target.value))
-    console.log(filteredResults)
     filteredResults.forEach((item) => {
       c.push(<Batch key={item.slug} batchJson={item} />);
     });
