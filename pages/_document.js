@@ -10,7 +10,7 @@ export default function Document() {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://betterpw.live" />
                 <meta property="og:image" content="/media/pw_white.png" />
-                <meta property="og:description" content="Better PW - For the Students, by the Students ( ͡° ͜ʖ ͡°)" />
+                <meta property="og:description" content="For the Students, by the Students ( ͡° ͜ʖ ͡°)" />
                 <meta name="theme-color" content="#FFFFFF" />
                 {/* <meta name="twitter:card" content="summary_large_image" /> */}
 
