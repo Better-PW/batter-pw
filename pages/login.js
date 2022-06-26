@@ -35,6 +35,9 @@ export default function Login() {
       } else {
         setTheme(themeLocal || "dark");
       }
+    }else{
+      setTheme("dark");
+      localStorage.setItem("theme","dark");
     }
     window.addEventListener("storage", () => {
       var themeLocal = GetTheme();
