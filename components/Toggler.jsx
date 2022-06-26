@@ -34,7 +34,11 @@ export default function Toggler() {
           setTheme(themeLocal || "dark");
           setIcon(themeLocal == "dark" ? faSun : faMoon);
         }
-      }
+      }else{
+      setTheme("dark");
+      localStorage.setItem("theme","dark");
+      window.dispatchEvent(new Event("storage"));
+    }
     });
   }, []);
 

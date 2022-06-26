@@ -38,6 +38,7 @@ export default function Login() {
     }else{
       setTheme("dark");
       localStorage.setItem("theme","dark");
+      window.dispatchEvent(new Event("storage"));
     }
     window.addEventListener("storage", () => {
       var themeLocal = GetTheme();
