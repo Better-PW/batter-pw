@@ -1,7 +1,6 @@
-import loggedIn from '../components/LoggedIn';
-import Spinner from '../components/spinner';
-import { useRouter } from 'next/router';
-
+import loggedIn from "../components/LoggedIn";
+import Spinner from "../components/spinner";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
@@ -12,14 +11,14 @@ export default function Home() {
       router.push("/batches");
     }
     if (!login) {
-      setTimeout(() => { router.push("/login"); }, 1500);
+      setTimeout(() => {
+        router.push("/login");
+      }, 1500);
     }
   }
   return (
     <div>
       <Spinner />
     </div>
-  )
+  );
 }
-
-
