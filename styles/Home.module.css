@@ -50,7 +50,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .searchBtn {
-  background-color: #1A00BB;
+  background-color: #1a00bb;
   color: white;
   font-weight: 700;
   font-size: small;
@@ -61,10 +61,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .searchBtn:hover {
-  background-color: #D2CFFF;
+  background-color: #d2cfff;
   transition: 0.5s;
 }
-
 
 .filterBtn {
   background-color: #1a5ec5;
@@ -141,7 +140,7 @@ body::-webkit-scrollbar-thumb {
   /*   8px 4px 12px 0px #d1d9e6; */
 }
 
-.toggleState:checked~.indicator {
+.toggleState:checked ~ .indicator {
   transform: translate3d(25%, 0, 0);
 }
 

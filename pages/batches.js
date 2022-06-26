@@ -1,12 +1,12 @@
-import axios from 'axios';
-import Batch from '../components/Batch';
+import axios from "axios";
+import Batch from "../components/Batch";
 // import Buttons from '../components/Buttons';
-import Navbar from '../components/navbar';
-import Options from '../components/Options';
-import loggedIn from '../components/LoggedIn';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Spinner from '../components/spinner';
+import Navbar from "../components/navbar";
+import Options from "../components/Options";
+import loggedIn from "../components/LoggedIn";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import Spinner from "../components/spinner";
 
 export default function Batches() {
   const [gotBatches, setGotBatches] = useState(false);
@@ -17,18 +17,24 @@ export default function Batches() {
   console.log(login);
   if (!(typeof login == "undefined")) {
     if (!login) {
-      setTimeout(() => { router.push("/login"); }, 1500);
+      setTimeout(() => {
+        router.push("/login");
+      }, 1500);
     }
   }
 
   useEffect(() => {
-    if (!gotBatches) { getBatches(); }
-  }, [gotBatches])
+    if (!gotBatches) {
+      getBatches();
+    }
+  }, [gotBatches]);
 
   useEffect(() => {
     if (myBatches.length > 0) {
       let c = [];
-      myBatches.forEach((item) => {c.push(<Batch key={item.slug} batchJson={item} />)});
+      myBatches.forEach((item) => {
+        c.push(<Batch key={item.slug} batchJson={item} />);
+      });
       setBatchCards(c);
     }
   }, [myBatches]);
@@ -38,12 +44,12 @@ export default function Batches() {
     if (loginData === null || !loginData.hasOwnProperty("access_token")) {
       localStorage.setItem("isLoggedIn", false);
       router.push("/login");
-      return
+      return;
     }
     const endpoint = "/api/all-batches";
     const payload = {
       access_token: loginData.access_token,
-      bought_batches: true
+      bought_batches: true,
     };
     var res = await axios.post(endpoint, payload);
     // console.log(res.status, res.data);
@@ -51,21 +57,23 @@ export default function Batches() {
       setMyBatches(res.data.data);
       setGotBatches(true);
     }
-  }
+  };
   return (
     <div>
-      {login ?
+      {login ? (
         <div>
           <Navbar />
-          <div className='h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]'>
-              {/* <Buttons /> */}
-              <div className="flex flex-row p-2 justify-end">
-              </div>
-              <div className='mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>
+          <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
+            {/* <Buttons /> */}
+            <div className="flex flex-row p-2 justify-end"></div>
+            <div className="mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
               {batchCards}
             </div>
           </div>
-        </div> : <Spinner />}
+        </div>
+      ) : (
+        <Spinner />
+      )}
     </div>
-  )
+  );
 }
