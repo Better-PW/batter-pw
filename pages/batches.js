@@ -21,8 +21,6 @@ export default function Batches() {
     }
   }
 
-
-
   useEffect(() => {
     if (!gotBatches) { getBatches(); }
   }, [gotBatches])
@@ -30,7 +28,7 @@ export default function Batches() {
   useEffect(() => {
     if (myBatches.length > 0) {
       let c = [];
-      myBatches.forEach((item) => { c.push(<Batch key={item.slug} batchJson={item} />) });
+      myBatches.forEach((item) => {c.push(<Batch key={item.slug} batchJson={item} />)});
       setBatchCards(c);
     }
   }, [myBatches]);
