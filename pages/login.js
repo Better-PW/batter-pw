@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css'
-import axios from 'axios';
-import { useRouter } from 'next/router';
-import loggedIn from '../components/LoggedIn';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import axios from "axios";
+import { useRouter } from "next/router";
+import loggedIn from "../components/LoggedIn";
 import Spinner from "../components/spinner";
-import GetTheme from '../components/GetTheme';
-import Toggler from '../components/Toggler';
+import GetTheme from "../components/GetTheme";
+import Toggler from "../components/Toggler";
 
 export default function Login() {
   const [phone, setPhone] = useState(0);
@@ -19,26 +19,39 @@ export default function Login() {
   if (!(typeof login == "undefined")) {
     console.log(login);
     if (login) {
-      setTimeout(() => { router.push("/batches"); }, 1500);
+      setTimeout(() => {
+        router.push("/batches");
+      }, 1500);
     }
   }
 
-  useEffect(() => { // set theme on local storage change (image src update)
+  useEffect(() => {
+    // set theme on local storage change (image src update)
     var themeLocal = GetTheme();
     console.log(themeLocal);
     if (themeLocal != undefined) {
-      if (themeLocal == "system") { setTheme("dark") }
-      else { setTheme(themeLocal || "dark"); }
+      if (themeLocal == "system") {
+        setTheme("dark");
+      } else {
+        setTheme(themeLocal || "dark");
+      }
+    }else{
+      setTheme("dark");
+      localStorage.setItem("theme","dark");
+      window.dispatchEvent(new Event("storage"));
     }
-    window.addEventListener('storage', () => {
+    window.addEventListener("storage", () => {
       var themeLocal = GetTheme();
       console.log(themeLocal);
       if (themeLocal != undefined) {
-        if (themeLocal == "system") { setTheme("dark") }
-        else { setTheme(themeLocal || "dark"); }
+        if (themeLocal == "system") {
+          setTheme("dark");
+        } else {
+          setTheme(themeLocal || "dark");
+        }
       }
-    })
-  }, [])
+    });
+  }, []);
 
   // if (!gotTheme && themeLocal != undefined) {
   //   setGotTheme(true);
@@ -52,39 +65,39 @@ export default function Login() {
     if (validity) {
       getOtp();
     }
-  }
+  };
 
   const getOtp = async () => {
     console.log("calling next api");
     const endpoint = "/api/send-otp";
     const payload = {
-      number: phone.toString()
-    }
+      number: phone.toString(),
+    };
     const a = await axios.post(endpoint, payload);
     if (a.status === 200 && a.data.success) {
       setSentOtp(true);
     } else {
       console.log("unable to send otp ", a.status, a.data);
     }
-  }
+  };
 
   const verifyOtp = async () => {
     const otpRegex = /^\d{6}$/;
     const validity = otpRegex.test(otp.toString());
     if (validity) {
-      const endpoint = "/api/verify-otp"
+      const endpoint = "/api/verify-otp";
       const payload = {
         number: phone.toString(),
-        otp: otp.toString()
-      }
+        otp: otp.toString(),
+      };
       const res = await axios.post(endpoint, payload);
       if (res.status === 200 && res.data.success) {
         var data = {
           access_token: res.data.data.access_token,
           expires_in: res.data.data.expires_in,
           refresh_token: res.data.data.refresh_token,
-          token_id: res.data.data.tokenId
-        }
+          token_id: res.data.data.tokenId,
+        };
         console.log(data);
         localStorage.setItem("isLoggedIn", true);
         localStorage.setItem("login-data", JSON.stringify(data));
@@ -93,8 +106,7 @@ export default function Login() {
         console.log("unable to verify otp", res.status, res.data.error);
       }
     }
-
-  }
+  };
 
   const [clicks, setClicks] = useState(0);
 
@@ -113,7 +125,7 @@ export default function Login() {
     {!login ?
       <div className="h-screen bg-white dark:bg-black ease-in-out duration-500 flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
         <h1 className={`${styles.totalClicks} clickText hidden`}>Clicks: {clicks}</h1>
-        <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer dark:invert ease-in-out duration-[600ms]' src={`/media/pw_light.png`} width={100} height={110} /></div>
+        <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer dark:invert ease-in-out duration-[600ms]' src="/media/pw_light.png" width={100} height={110} /></div>
         <div className="text-4xl tracking-widest">Welcome To <span className="font-bold">PHYSICS WALLAH</span></div>
         <div className="my-3 mb-10 font-light text-xl tracking-widest">
           Padhlo Chahe Kahi Se<br />Selection Hoga Yahi Se
