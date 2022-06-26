@@ -15,7 +15,7 @@ export default function Batch({ batchJson }) {
             </div>
             <div className="flex py-3 justify-between items-center my-auto">
                 <div className="ease-in-out duration-[5ms] font-semibold text-xl m-2 w-fit">{batchJson.name}</div>
-                <button className="font-poppins font-semibold p-2 px-5 bg-[#1a5ec5] border-2 border-[#1a5ec5] hover:border-[#1a5ec5] hover:bg-[#ffffff] hover:text-[#1a5ec5] ease-in-out duration-300 rounded-md drop-shadow-2xl text-white dark:hover:border-[#1a5ec5] dark:hover:bg-[#4b4b4b9c] dark:hover:text-white" onClick={openBatchPage}>EXPLORE</button>
+                <button className="font-poppins font-semibold p-2 px-5 bg-[#1a5ec5] border-2 border-[#1a5ec5] hover:border-[#1a5ec5] hover:bg-[#ffffff] hover:text-[#1a5ec5] ease-in-out duration-300 rounded-md drop-shadow-2xl text-white dark:hover:border-[#1a5ec5] dark:hover:bg-[#4b4b4b9c] dark:hover:text-white" onClick={openBatchPage}>OPEN</button>
             </div>
         </div>
     )
