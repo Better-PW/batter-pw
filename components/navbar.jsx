@@ -5,7 +5,7 @@ import GetTheme from './GetTheme';
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function Navbar() {
+export default function Navbar(props) {
     const [theme, setTheme] = useState("dark");
     useEffect(() => { // set theme on local storage change (image src update)
         var themeLocal = GetTheme();
@@ -51,7 +51,7 @@ export default function Navbar() {
                 <ul className='flex flex-row text-center items-center font-poppins pt-1'>
                     <li className='justify-self-end pl-5 pr-5'><Image src={`/media/pw_${theme}.png`} width={30} height={35} /></li>
                     {onMobile ? <li className='text-3xl font-semibold tracking-widest hidden'>PHYSICS WALLAH</li> : <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>}
-                    {onMobile ? <FontAwesomeIcon style={{ fontSize: "25px", marginLeft: "auto"}} icon={faEllipsisVertical} /> : <Options />}
+                    {onMobile ? <FontAwesomeIcon style={{ fontSize: "25px", marginLeft: "auto"}} icon={faEllipsisVertical} /> : <Options handleChange={props.search} />}
                 </ul>
             </div>
         </nav>

@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import GetTheme from "./GetTheme";
 
-export default function Options() {
+export default function Options(props) {
   function filterClick() {
     alert("No settings yet.");
   }
@@ -30,6 +30,7 @@ export default function Options() {
             className="ease-in-out duration-500 px-10 border-2 border-gray-300 text-gray-900 text-sm rounded block w-[250px] p-2.5 dark:border-1 dark:border-[#595959] dark:placeholder:text-gray-400 dark:text-white"
             placeholder="Search For Batches"
             required=""
+            onChange={(e) => {props.handleChange(e)}}
           />
         </div>
       </form>

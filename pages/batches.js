@@ -58,11 +58,21 @@ export default function Batches() {
       setGotBatches(true);
     }
   };
+
+  function searchHandler(e) {
+    const c = [];
+    const filteredResults = myBatches.filter((batch) => String(batch.name).toLowerCase().includes(e.target.value))
+    console.log(filteredResults)
+    filteredResults.forEach((item) => {
+      c.push(<Batch key={item.slug} batchJson={item} />);
+    });
+    setBatchCards(c);
+  }
   return (
     <div>
       {login ? (
         <div>
-          <Navbar />
+          <Navbar search={(e) => {searchHandler(e)}} />
           <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
             {/* <Buttons /> */}
             <div className="flex flex-row p-2 justify-end"></div>
