@@ -6,24 +6,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useTheme } from "next-themes";
+import GetTheme from "./GetTheme";
 
 export default function Options() {
+    // const [theme, setTheme] = useState();
+    const { theme, setTheme } = useTheme();
+    const [icon, setIcon] = useState();
+
+    useEffect(() => { // set theme on local storage change
+        var themeLocal = GetTheme();
+        console.log(themeLocal);
+        if (themeLocal != undefined) {
+            if (themeLocal == "system") { setTheme("dark"); setIcon(faSun); }
+            else { setTheme(themeLocal || "dark"); setIcon(themeLocal == "dark" ? faSun : faMoon); }
+        }
+        window.addEventListener('storage', () => {
+            var themeLocal = GetTheme();
+            console.log(themeLocal);
+            if (themeLocal != undefined) {
+                if (themeLocal == "system") { setTheme("dark") }
+                else { setTheme(themeLocal || "dark"); setIcon(themeLocal == "dark" ? faSun : faMoon); }
+            }
+        })
+    }, [])
+
     function filterClick() {
         alert("No filters yet.");
     }
-    const { theme, setTheme } = useTheme();
-    const [icon, setIcon] = useState(faSun);
 
     function toggleMode() {
-        if (theme == "light" || icon == faMoon) {
-            setIcon(faSun);
+        if (theme == "light") {
             setTheme("dark");
-        } else if (theme == "dark" || icon == faSun) {
-            setIcon(faMoon);
+            localStorage.setItem("theme", "dark");
+        } else if (theme == "dark") {
             setTheme("light");
+            localStorage.setItem("theme", "light");
         } else {
-            setIcon(faSun);
             setTheme("dark");
+            localStorage.setItem("theme", "dark");
         }
         window.dispatchEvent(new Event('storage'));
     }
