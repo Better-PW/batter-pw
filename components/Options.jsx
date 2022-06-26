@@ -1,46 +1,48 @@
 import React from "react";
 import styles from '../styles/Home.module.css'
 import Toggle from "./Toggle";
+import { faMoon, faSun, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useTheme } from "next-themes";
 
 export default function Options() {
-    function filterClick(){
+    function filterClick() {
         alert("No filters yet.");
     }
-    
-    const [icon, setIcon] = useState("sun");
+    const { theme, setTheme } = useTheme();
+    const [icon, setIcon] = useState(faSun);
 
-    function clicked(){
-        if (icon === "sun"){
-            setIcon("moon");
-            console.log("Light Mode Enabled") // moon appears means light mode enabled
-        } else if (icon === "moon") { 
-            setIcon("sun"); 
-            console.log("Dark Mode Enabled") // sun appears means dark mode enabled.
+    function toggleMode() {
+        if (theme == "light" || icon == faMoon) {
+            setIcon(faSun);
+            setTheme("dark");
+        } else if (theme == "dark" || icon == faSun) {
+            setIcon(faMoon);
+            setTheme("light");
+        } else {
+            setIcon(faSun);
+            setTheme("dark");
         }
+        window.dispatchEvent(new Event('storage'));
     }
 
     return (
         <div className="pt-4 flex justify-end pb-3.5 ml-auto">
-            <div>
-            <div className="pr-3"><Image style={{transition: "0.5s"}} onClick={clicked} className='darkLight hover:cursor-pointer' id="darkLight" src={`/media/dark-light/${icon}.png`} width={40} height={40} /></div>
+            <div className="hover:cursor-pointer">
+                <FontAwesomeIcon className="p-1" size="2x" onClick={toggleMode} icon={icon} />
             </div>
             {/* search bar */}
-            <div>
-                <form className="flex items-center shadow-lg">
-                    <label className="sr-only">Search</label>
-                    <div className="relative w-full">
-                        <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                            <svg className="w-5 h-5 text-gray-700 dark:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
-                        </div>
-                        <input type="text" id="simple-search" className="border-1 border-gray-300 text-gray-900 text-sm rounded block w-full pl-10 p-2.5 dark:border-1 dark:border-[#494949] dark:placeholder:text-gray-400 dark:text-gray-800" placeholder="Search For Batches" required="" />
-                    </div>
-                </form>
-            </div>
+            <form className="flex items-center">
+                <div className="flex">
+                    <FontAwesomeIcon className="flex relative m-0 p-0 left-5 top-2.5" icon={faSearch} />
+                    <input type="text" id="simple-search" className="pl-6 border-1 border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5 dark:border-1 dark:border-[#494949] dark:placeholder:text-gray-400 dark:text-white" placeholder="Search For Batches" required="" />
+                </div>
+            </form>
             {/* filter button */}
-            <div className="inline ml-2 pt-[0.5px]">
-                <button onClick={filterClick} className={`${styles.filterBtn}`}><span className={styles.filterText}>FILTERS</span></button>
+            <div className="ml-2 pt-[0.5px]">
+                <button onClick={filterClick} className={`${styles.filterBtn}`}><span className={styles.filterText}>SETTINGS</span></button>
             </div>
             {/* toggle */}
             {/*<Toggle />*/}

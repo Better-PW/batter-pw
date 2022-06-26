@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Batch from '../components/Batch';
-import Buttons from '../components/Buttons';
+// import Buttons from '../components/Buttons';
 import Navbar from '../components/navbar';
 import Options from '../components/Options';
 import loggedIn from '../components/LoggedIn';
@@ -60,7 +60,7 @@ export default function Batches() {
         <div>
           <Navbar />
           <div className='h-screen bg-gray-100 dark:bg-[#282828]'>
-            <Buttons />
+            {/* <Buttons /> */}
             <div className="flex flex-row p-2 justify-end">
             </div>
             <div className='mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>

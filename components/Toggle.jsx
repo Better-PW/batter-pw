@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes"
 
 export default function Toggle() {
-    const [gotTheme, setGotTheme] = useState(false);
     const { theme, setTheme } = useTheme();
     return (
         <div title="toggle dark mode" className={`${styles.toggleButton} ml-2 toggle-button inline  pt-1`}>
