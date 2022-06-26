@@ -104,27 +104,27 @@ export default function Login() {
       document.querySelector(".clickText").style.display = "inline";
     }
     if (clicks > 8) {
-      document.querySelector(".h-screen").classList.add("animate-spin");
+      document.querySelector(".h-screen").classList.add("animate-bounce");
     }
   }
 
   return (<div>
-    <div className="toggle-container flex"><div style={{marginLeft: "auto", padding: "4px 4px"}}><Toggler /></div></div>
+    <div className="toggle-container absolute right-0	p-5"><div><Toggler /></div></div>
     {!login ?
-      <div className="h-screen flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
+      <div className="h-screen bg-white dark:bg-black ease-in-out duration-500 flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
         <h1 className={`${styles.totalClicks} clickText hidden`}>Clicks: {clicks}</h1>
-        <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer' src={`/media/pw_${theme}.png`} width={100} height={110} /></div>
+        <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer ]' src={`/media/pw_${theme}.png`} width={100} height={110} /></div>
         <div className="text-4xl tracking-widest">Welcome To <span className="font-bold">PHYSICS WALLAH</span></div>
         <div className="my-3 mb-10 font-light text-xl tracking-widest">
           Padhlo Chahe Kahi Se<br />Selection Hoga Yahi Se
         </div>
         <div className={"flex flex-row mt-5 justify-center " + (sentOtp ? "visible" : "invisible")}> {/* has phone number -> login with otp */}
           <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide placeholder:text-gray-400" type="tel" required minLength="6" maxLength="6" name="otp" placeholder="Enter OTP" pattern="\d*" onChange={(e) => { setOtp(e.target.value) }} />
-          <button className="mx-2 p-3 px-7 bg-[#1a5ec5] rounded-lg drop-shadow-2xl text-white" onClick={verifyOtp}>LOGIN</button>
+          <button className="mx-2 p-3 px-7 bg-[#1a5ec5] hover:scale-105 ease-in-out duration-300 rounded-lg drop-shadow-2xl text-white" onClick={verifyOtp}>LOGIN</button>
         </div>
         <div className={"flex flex-row justify-center " + (sentOtp ? "invisible" : "visible")}> {/* no phone number -> show phone number input */}
-          <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide placeholder:text-gray-400" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
-          <button className="mx-2 p-3 px-5 bg-[#1a5ec5] rounded-lg drop-shadow-2xl text-white" onClick={validatePhone}>GET OTP</button>
+          <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide ease-in-out duration-500 dark:bg-[#434343] placeholder:text-gray-400" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
+          <button className="mx-2 p-3 px-5 bg-[#1a5ec5] hover:scale-105 ease-in-out duration-300 rounded-lg drop-shadow-2xl text-white" onClick={validatePhone}>GET OTP</button>
         </div>
       </div> : <Spinner />}
   </div>
