@@ -17,6 +17,7 @@ export default function Toggler() {
       if (themeLocal == "system") {
         setTheme("dark");
         setIcon(faSun);
+        localStorage.setItem("theme","dark");
       } else {
         setTheme(themeLocal || "dark");
         setIcon(themeLocal == "dark" ? faSun : faMoon);
@@ -28,6 +29,7 @@ export default function Toggler() {
       if (themeLocal != undefined) {
         if (themeLocal == "system") {
           setTheme("dark");
+          setIcon(faSun);
         } else {
           setTheme(themeLocal || "dark");
           setIcon(themeLocal == "dark" ? faSun : faMoon);
