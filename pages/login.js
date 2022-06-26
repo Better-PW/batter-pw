@@ -131,8 +131,8 @@ export default function Login() {
           Padhlo Chahe Kahi Se<br />Selection Hoga Yahi Se
         </div>
         <div className={"flex flex-row mt-5 justify-center " + (sentOtp ? "visible" : "invisible")}> {/* has phone number -> login with otp */}
-          <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide ease-in-out duration-500 dark:bg-[#434343] placeholder:text-gray-400" type="tel" required minLength="6" maxLength="6" name="otp" placeholder="Enter OTP" pattern="\d*" onChange={(e) => { setOtp(e.target.value) }} />
-          <button className="mx-2 p-3 px-7 bg-[#1a5ec5] hover:scale-105 ease-in-out duration-300 rounded-lg drop-shadow-2xl text-white" onClick={verifyOtp}>LOGIN</button>
+          <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide ease-in-out duration-500 dark:bg-[#434343] translate-y-12 placeholder:text-gray-400" type="tel" required minLength="6" maxLength="6" name="otp" placeholder="Enter OTP" pattern="\d*" onChange={(e) => { setOtp(e.target.value) }} />
+          <button className="mx-2 p-3 px-7 bg-[#1a5ec5] hover:scale-105 ease-in-out duration-300 rounded-lg drop-shadow-2xl translate-y-12 text-white" onClick={verifyOtp}>LOGIN</button>
         </div>
         <div className={"flex flex-row justify-center " + (sentOtp ? "invisible" : "visible")}> {/* no phone number -> show phone number input */}
           <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide ease-in-out duration-500 dark:bg-[#434343] placeholder:text-gray-400" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
