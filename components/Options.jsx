@@ -22,7 +22,7 @@ export default function Options() {
     }
 
     return (
-        <div className="pt-2 flex justify-end pb-3.5 ml-auto">
+        <div className="pt-4 flex justify-end pb-3.5 ml-auto">
             <div>
             <div className="pr-3"><Image style={{transition: "0.5s"}} onClick={clicked} className='darkLight hover:cursor-pointer' id="darkLight" src={`/media/dark-light/${icon}.png`} width={40} height={40} /></div>
             </div>
