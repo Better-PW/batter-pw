@@ -135,10 +135,10 @@ export default function Login() {
           <button className="mx-2 p-3 px-7 bg-[#1a5ec5] hover:scale-105 ease-in-out duration-300 rounded-lg drop-shadow-2xl text-white" onClick={verifyOtp}>LOGIN</button>
         </div>
         <div className={"flex flex-row justify-center " + (sentOtp ? "invisible" : "visible")}> {/* no phone number -> show phone number input */}
-          <input className="rounded-lg drop-shadow-xl tracking-wide ease-in-out duration-500 dark:bg-[#434343] placeholder:text-gray-400" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
+          <input className="w-64 mx-2 px-5 rounded-lg drop-shadow-xl tracking-wide ease-in-out duration-500 dark:bg-[#434343] placeholder:text-gray-400" type="tel" required minLength="10" maxLength="10" name="phone" placeholder="Enter Phone Number Here" pattern="\d*" onChange={(e) => { setPhone(e.target.value) }} />
           <button className="mx-2 p-3 px-5 bg-[#1a5ec5] hover:scale-105 ease-in-out duration-500 rounded-lg drop-shadow-2xl text-white" onClick={validatePhone}>GET OTP</button>
         </div>
       </div> : <Spinner />}
   </div>
   )
-} //PUSH KAR RHA HU
+}
