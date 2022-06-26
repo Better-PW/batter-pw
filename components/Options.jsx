@@ -49,19 +49,20 @@ export default function Options() {
     }
 
     return (
-        <div className="pt-4 flex justify-end pb-3.5 ml-auto">
-            <div className="hover:cursor-pointer">
+        <div className="pt-3 flex justify-end pb-3.5 ml-auto">
+            {/*Toggle Dark Mode*/}
+            <div className="hover:cursor-pointer ease-in-out duration-500 pt-1">
                 <FontAwesomeIcon className="p-1" size="2x" onClick={toggleMode} icon={icon} />
             </div>
-            {/* search bar */}
+            {/*Search Bar*/}
             <form className="flex items-center">
                 <div className="flex">
-                    <FontAwesomeIcon className="flex relative m-0 p-0 left-5 top-2.5" icon={faSearch} />
-                    <input type="text" id="simple-search" className="pl-6 border-1 border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5 dark:border-1 dark:border-[#494949] dark:placeholder:text-gray-400 dark:text-white" placeholder="Search For Batches" required="" />
+                    <FontAwesomeIcon className="flex relative m-0 p-0 left-[32px] top-[12px]" icon={faSearch} />
+                    <input type="text" id="simple-search" className="ease-in-out duration-500 px-12 border-2 border-gray-300 text-gray-900 text-sm rounded block w-[250px] p-2.5 dark:border-1 dark:border-[#595959] dark:placeholder:text-gray-400 dark:text-white" placeholder="Search For Batches" required="" />
                 </div>
             </form>
-            {/* filter button */}
-            <div className="ml-2 pt-[0.5px]">
+            {/*Settings Button*/}
+            <div className="ml-2 pt-[1px]">
                 <button onClick={filterClick} className={`${styles.filterBtn}`}><span className={styles.filterText}>SETTINGS</span></button>
             </div>
             {/* toggle */}

@@ -59,11 +59,11 @@ export default function Batches() {
       {login ?
         <div>
           <Navbar />
-          <div className='h-screen bg-gray-100 dark:bg-[#282828]'>
-            {/* <Buttons /> */}
-            <div className="flex flex-row p-2 justify-end">
-            </div>
-            <div className='mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>
+          <div className='h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]'>
+              {/* <Buttons /> */}
+              <div className="flex flex-row p-2 justify-end">
+              </div>
+              <div className='mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10'>
               {batchCards}
             </div>
           </div>
