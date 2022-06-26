@@ -21,6 +21,7 @@ export default function Home() {
     <div>
       <Head>
         <meta name="description" content="Better Version of PW Website made by students for students ;)" />
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/988729878444642377/990616741908463626/pw_light.png"></meta>
         <meta name="keywords" content="better pw, pw, better physicswallah, physicswallah, pw nextjs, pankaj pw, titan pw, ankush pw, arnab pw, ag pw, rudransh pw"></meta>
       </Head>
       <Spinner />
