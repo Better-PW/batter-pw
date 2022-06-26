@@ -9,7 +9,7 @@ export default function Batch({ batchJson }) {
     }
 
     return (
-        <div className="ease-in-out duration-500 flex bg-[#ffffff] dark:bg-[#494949] flex-col p-3 pb-0 rounded-md shadow-xl">
+        <div className="ease-in-out duration-500 flex hover:shadow-2xl bg-[#ffffff] hover:scale-105 dark:bg-[#494949] flex-col p-3 pb-0 rounded-md shadow-xl">
             <div className="rounded-md shadow-xl">
                 <Image className="rounded-md" width={720} height={360} layout="responsive" src={`/api/image-proxy?imageUrl=${batchJson.previewImage.baseUrl}${batchJson.previewImage.key}`} alt={batchJson.name + " Thumbnail"} />
             </div>
