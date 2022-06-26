@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Options from './Options';
 import GetTheme from './GetTheme';
+import { faMoon, faSun, faSearchk, faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Navbar() {
     const [theme, setTheme] = useState("dark");
@@ -21,13 +23,35 @@ export default function Navbar() {
             }
         })
     }, [])
+
+    const [onMobile, setMobile] = useState();
+
+    useEffect(() => {
+        const screenWidth = screen.width;
+        console.log(screenWidth);
+        if (screenWidth < 900) {
+            setMobile(true)
+        } else {
+            setMobile(false)
+        }
+
+        window.addEventListener("resize", () => {
+            if (screen.width < 900) {
+                setMobile(true)
+            } else {
+                setMobile(false)
+            }
+        })
+    })
+
+
     return (
         <nav>
             <div className='pr-8 pl-[10px] shadow-md shadow-black/30 dark:shadow-white/20 drop-shadow-md rounded-md'>
                 <ul className='flex flex-row text-center items-center font-poppins pt-1'>
                     <li className='justify-self-end pl-5 pr-5'><Image src={`/media/pw_${theme}.png`} width={30} height={35} /></li>
-                    <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>
-                    <Options />
+                    {onMobile ? <li className='text-3xl font-semibold tracking-widest hidden'>PHYSICS WALLAH</li> : <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>}
+                    {onMobile ? <FontAwesomeIcon style={{ fontSize: "25px", marginLeft: "auto"}} icon={faEllipsisVertical} /> : <Options />}
                 </ul>
             </div>
         </nav>
