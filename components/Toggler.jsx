@@ -17,7 +17,7 @@ export default function Toggler() {
       if (themeLocal == "system") {
         setTheme("dark");
         setIcon(faSun);
-        localStorage.setItem("theme","dark");
+        localStorage.setItem("theme", "dark");
       } else {
         setTheme(themeLocal || "dark");
         setIcon(themeLocal == "dark" ? faSun : faMoon);
@@ -34,11 +34,11 @@ export default function Toggler() {
           setTheme(themeLocal || "dark");
           setIcon(themeLocal == "dark" ? faSun : faMoon);
         }
-      }else{
-      setTheme("dark");
-      localStorage.setItem("theme","dark");
-      window.dispatchEvent(new Event("storage"));
-    }
+      } else {
+        setTheme("dark");
+        localStorage.setItem("theme", "dark");
+        window.dispatchEvent(new Event("storage"));
+      }
     });
   }, []);
 

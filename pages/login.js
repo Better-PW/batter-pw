@@ -35,9 +35,9 @@ export default function Login() {
       } else {
         setTheme(themeLocal || "dark");
       }
-    }else{
+    } else {
       setTheme("dark");
-      localStorage.setItem("theme","dark");
+      localStorage.setItem("theme", "dark");
       window.dispatchEvent(new Event("storage"));
     }
     window.addEventListener("storage", () => {
@@ -116,7 +116,7 @@ export default function Login() {
       document.querySelector(".clickText").style.display = "inline";
     }
     if (clicks > 8) {
-      document.querySelector(".h-screen").classList.add("animate-bounce");
+      document.querySelector(".h-screen").classList.add("animate-spin");
     }
   }
 
@@ -125,7 +125,7 @@ export default function Login() {
     {!login ?
       <div className="h-screen bg-white dark:bg-black ease-in-out duration-500 flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
         <h1 className={`${styles.totalClicks} clickText hidden`}>Clicks: {clicks}</h1>
-        <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer dark:invert ease-in-out duration-[600ms]' src="/media/pw_light.png" width={100} height={110} /></div>
+        <div className="my-5"><Image onClick={handleClick} title='click me daddy UwU' className='pw-image hover:cursor-pointer dark:invert ease-in-out duration-[600ms]' src="/media/pw.png" width={100} height={100} /></div>
         <div className="text-4xl tracking-widest">Welcome To <span className="font-bold">PHYSICS WALLAH</span></div>
         <div className="my-3 mb-10 font-light text-xl tracking-widest">
           Padhlo Chahe Kahi Se<br />Selection Hoga Yahi Se

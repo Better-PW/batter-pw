@@ -49,9 +49,9 @@ export default function Navbar(props) {
         <nav>
             <div className='ease-in-out duration-500 bg-[#fff] dark:bg-black pr-8 pl-[10px] shadow-md shadow-black/30 dark:shadow-white/20 drop-shadow-md'>
                 <ul className='flex flex-row text-center items-center font-poppins pt-1'>
-                    <li className='justify-self-end pl-5 pr-5 dark:invert ease-in-out duration-500'><Image src="/media/pw_light.png" width={30} height={35} /></li>
+                    <li className='justify-self-end pl-5 pr-5 dark:invert ease-in-out duration-500'><Image src="/media/pw.png" width={40} height={40} /></li>
                     {onMobile ? <li className='text-3xl font-semibold tracking-widest hidden'>PHYSICS WALLAH</li> : <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>}
-                    {onMobile ? <FontAwesomeIcon style={{ fontSize: "25px", marginLeft: "auto"}} icon={faEllipsisVertical} /> : <Options handleChange={props.search} />}
+                    {onMobile ? <FontAwesomeIcon style={{ fontSize: "25px", marginLeft: "auto" }} icon={faEllipsisVertical} /> : <Options handleChange={props.search} />}
                 </ul>
             </div>
         </nav>

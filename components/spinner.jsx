@@ -6,9 +6,9 @@ export default function Spinner() {
       <div className="my-5 animate-ping">
         <Image
           className="pw-image"
-          src="/media/pw_light.png"
+          src="/media/pw.png"
           width={60}
-          height={65}
+          height={60}
         />
       </div>
       <div className="font-bold text-2xl animate-pulse"></div>
