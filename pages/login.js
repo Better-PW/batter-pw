@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import loggedIn from '../components/LoggedIn';
 import Spinner from "../components/spinner";
 import GetTheme from '../components/GetTheme';
+import Toggler from '../components/Toggler';
 
 export default function Login() {
   const [phone, setPhone] = useState(0);
@@ -108,6 +109,7 @@ export default function Login() {
   }
 
   return (<div>
+    <div className="toggle-container flex"><div style={{marginLeft: "auto", padding: "4px 4px"}}><Toggler /></div></div>
     {!login ?
       <div className="h-screen flex flex-col justify-center text-center content-center subpixel-antialiased font-poppins">
         <h1 className={`${styles.totalClicks} clickText hidden`}>Clicks: {clicks}</h1>

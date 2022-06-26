@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import Toggle from '../components/Toggle'
 import { ThemeProvider } from 'next-themes'
 
 function MyApp({ Component, pageProps }) {
