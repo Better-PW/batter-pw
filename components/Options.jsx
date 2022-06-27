@@ -9,13 +9,14 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import GetTheme from "./GetTheme";
 import Developers from "../pages/developers";
+import Link from "next/link";
 
 export default function Options(props) {
   function filterClick() {
     alert("No settings yet.");
   }
 
-  function toggleDropdown(){
+  function toggleDropdown() {
     document.querySelector("#list-toggle").classList.toggle("hidden")
   }
 
@@ -23,16 +24,17 @@ export default function Options(props) {
 
   const [batchPage, setBatchPage] = useState();
 
-  useEffect(()=>{
-      if (router.pathname === "/batches"){
-          setBatchPage(true)
-      } else {
-          setBatchPage(false)
-      }
+  useEffect(() => {
+    if (router.pathname === "/batches") {
+      setBatchPage(true)
+    } else {
+      document.querySelector("#simple-search").classList.add("hidden")
+      setBatchPage(false)
+    }
   })
 
-  function clickOption(){
-    if (batchPage === true){
+  function clickOption() {
+    if (batchPage === true) {
       Router.push("/developers")
     } else {
       Router.push("/batches")
