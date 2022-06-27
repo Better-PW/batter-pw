@@ -1,0 +1,10 @@
+.devCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
