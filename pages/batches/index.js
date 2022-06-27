@@ -1,12 +1,12 @@
 import axios from "axios";
-import Batch from "../components/Batch";
+import Batch from "../../components/Batch";
 // import Buttons from '../components/Buttons';
-import Navbar from "../components/navbar";
-import Options from "../components/Options";
-import loggedIn from "../components/LoggedIn";
+import Navbar from "../../components/navbar";
+import Options from "../../components/Options";
+import loggedIn from "../../components/LoggedIn";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Spinner from "../components/spinner";
+import Spinner from "../../components/spinner";
 
 export default function Batches() {
   const [gotBatches, setGotBatches] = useState(false);

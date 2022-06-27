@@ -10,7 +10,7 @@ export default function Navbar(props) {
     const [theme, setTheme] = useState("dark");
     useEffect(() => { // set theme on local storage change (image src update)
         var themeLocal = GetTheme();
-        console.log(themeLocal);
+        // console.log(themeLocal);
         if (themeLocal != undefined) {
             if (themeLocal == "system") { setTheme("dark") }
             else { setTheme(themeLocal || "dark"); }

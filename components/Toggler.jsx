@@ -12,7 +12,7 @@ export default function Toggler() {
   useEffect(() => {
     // set theme on local storage change
     var themeLocal = GetTheme();
-    console.log(themeLocal);
+    // console.log(themeLocal);
     if (themeLocal != undefined) {
       if (themeLocal == "system") {
         setTheme("dark");
