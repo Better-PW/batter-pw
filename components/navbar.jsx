@@ -27,8 +27,8 @@ export default function Navbar(props) {
     const [onMobile, setMobile] = useState();
 
     useEffect(() => {
-        const screenWidth = screen.width;
-        console.log(screenWidth);
+        var screenWidth = document.body.clientWidth;
+        // console.log(screenWidth);
         if (screenWidth < 900) {
             setMobile(true)
         } else {
@@ -36,7 +36,9 @@ export default function Navbar(props) {
         }
 
         window.addEventListener("resize", () => {
-            if (screen.width < 900) {
+            screenWidth = document.body.clientWidth;
+            // console.log(screenWidth);
+            if (screenWidth < 830) {
                 setMobile(true)
             } else {
                 setMobile(false)
