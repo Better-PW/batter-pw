@@ -72,8 +72,6 @@ export default function Options(props) {
           </div>
         </div>
       </div>
-      {/* toggle */}
-      {/*<Toggle />*/}
     </div>
   );
 }
