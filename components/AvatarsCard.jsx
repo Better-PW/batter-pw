@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function AvatarCard(props) {
     return (
-        <div className="ml-5 card bg-slate-100 flex flex-col items-center justify-center p-4 shadow-lg rounded-2xl w-80 dark:bg-gray-800">
-            <div className="main grid place-items-center h-half">
+        <div className="ml-5 card bg-slate-100 flex flex-col items-center justify-center p-4  shadow-lg rounded-2xl w-[350px] dark:bg-gray-800">
+            <div className="main grid place-items-center h-alf">
                 {/* profile picture */}
-                <div className="profile mx-auto rounded-full py-2 w-16 ">
+                <div className="profile mx-auto rounded-full py-2 w-20 ">
                     <Image className="rounded-full" src={props.src} width={200} height={200} />
                 </div>
                 {/* Name */}
@@ -20,7 +20,7 @@ export default function AvatarCard(props) {
                 {/* github link */}
                 <div className="w-full mt-8">
                     <a href={props.gh} target="_blank">
-                        <button className="bg-blue-500 py-2 px-4 hover:bg-blue-600 text-white w-full font-semibold rounded-lg shadow-lg">
+                        <button className="bg-blue-500 py-2 px-6 hover:bg-blue-600 ease-in-out duration-300 text-white w-full font-semibold rounded-lg shadow-lg">
                             Github
                         </button>
                     </a>
