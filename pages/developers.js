@@ -8,7 +8,7 @@ export default function Developers(){
     return (
         <>
           <Navbar />
-          <h1 className="text-3xl text-center mt-10">Better PW Developers</h1>
+          <h1 className="text-3xl text-center mt-10"><a href="https://discord.gg/fWJ9n3nwQu">Better PW</a> Developers</h1>
           <p className="text-center mt-5 text-gray-700 dark:text-gray-500">Better PW is an un-offical project by made by students for students :D</p>
           {/* <div className="flex items-center justify-center"><Image className="" src="/media/beaches.png" width={300} height={300} /></div> */}
           <div className={styles.devCardsGrid}>
