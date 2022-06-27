@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AvatarCard(props) {
     return (
-        <div className="ml-5 card bg-slate-100 ease-in-out duration-500 flex flex-col items-center justify-center p-4  shadow-lg rounded-2xl w-[350px] dark:bg-gray-800">
+        <div className="hover:scale-105 ml-5 card bg-slate-100 ease-in-out duration-500 flex flex-col items-center justify-center p-4  shadow-lg rounded-2xl w-[350px] dark:bg-gray-800">
             <div className="main grid place-items-center h-alf">
                 {/* profile picture */}
                 <div className="profile mx-auto rounded-full py-2 w-20 ">
