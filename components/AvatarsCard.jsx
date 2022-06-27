@@ -19,9 +19,11 @@ export default function AvatarCard(props) {
                 </div>
                 {/* github link */}
                 <div className="w-full mt-8">
-                    <button className="bg-blue-500 py-2 px-4 hover:bg-blue-600 text-white w-full font-semibold rounded-lg shadow-lg">
-                        <a href={props.gh} target="_blank">Github</a>
-                    </button>
+                    <a href={props.gh} target="_blank">
+                        <button className="bg-blue-500 py-2 px-4 hover:bg-blue-600 text-white w-full font-semibold rounded-lg shadow-lg">
+                            Github
+                        </button>
+                    </a>
                 </div>
 
             </div>
