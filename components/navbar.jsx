@@ -4,6 +4,7 @@ import Options from './Options';
 import GetTheme from './GetTheme';
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/router';
 
 export default function Navbar(props) {
     const [theme, setTheme] = useState("dark");

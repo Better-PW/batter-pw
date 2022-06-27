@@ -4,9 +4,11 @@ import Toggler from "./Toggler";
 import { faMoon, faSun, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Router, { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import GetTheme from "./GetTheme";
+import Developers from "../pages/developers";
 
 export default function Options(props) {
   function filterClick() {
@@ -15,6 +17,26 @@ export default function Options(props) {
 
   function toggleDropdown(){
     document.querySelector("#list-toggle").classList.toggle("hidden")
+  }
+
+  const router = useRouter();
+
+  const [batchPage, setBatchPage] = useState();
+
+  useEffect(()=>{
+      if (router.pathname === "/batches"){
+          setBatchPage(true)
+      } else {
+          setBatchPage(false)
+      }
+  })
+
+  function clickOption(){
+    if (batchPage === true){
+      Router.push("/developers")
+    } else {
+      Router.push("/batches")
+    }
   }
 
   return (
@@ -55,8 +77,8 @@ export default function Options(props) {
               id="list-toggle"
               className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton1">
               <li>
-                <a
-                  className=" dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">Developers</a>
+                <a onClick={clickOption}
+                  className=" dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">{batchPage ? "Developers" : "Batches"}</a>
               </li>
               <li>
                 <a className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-red-400 hover:bg-gray-100" href="#">Log out</a
