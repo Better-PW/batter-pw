@@ -19,7 +19,7 @@ export default function Batch({ batchJson }) {
     }, [batchJson])
 
     return (
-        <div className="ease-in-out duration-500 flex hover:shadow-2xl bg-white dark:bg-[#494949] flex-col p-3 pb-0 rounded-md shadow-xl">
+        <div className="ease-in-out duration-500 flex hover:scale-105 hover:shadow-2xl bg-white dark:bg-[#494949] flex-col p-3 pb-0 rounded-md shadow-xl">
             <div className="rounded-md shadow-xl">
                 <Image
                     className="rounded-md"

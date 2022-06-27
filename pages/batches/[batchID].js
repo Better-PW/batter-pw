@@ -4,19 +4,48 @@ import axios from 'axios';
 import Spinner from '../../components/spinner';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Subjects = ({ subjectsJson }) => {
   // console.log(subjectsJson);
-  var s = [];
+  var subs = [];
   if (subjectsJson == undefined) { return <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div> }
   subjectsJson.forEach((item) => {
-    s.push(
-      <div key={item.subject} className="flex w-fill mx-2 shadow-xl rounded-md cursor-pointer  bg-white  dark:bg-[#2a2a2a]  justify-between items-center my-auto ease-in-out duration-500 hover:scale-105 hover:shadow-2xl">
-        <div className="font-semibold text-xl m-2 w-fit">{item.subject}</div>
-      </div>)
+    subs.push(
+      <div className="font-semibold py-3 px-2 truncate text-xl text-center shadow-xl rounded-md cursor-pointer bg-white dark:bg-[#2a2a2a]  ease-in-out duration-500 hover:scale-105 hover:shadow-2xl">{item.subject}</div>
+    )
   });
-  return (<div className="w-fit flex mx-4 px-3">
-    {s}
+  return (<div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-4 px-3 gap-2">
+    {subs}
+  </div>)
+}
+
+const TodaysClass = ({ classJson }) => {
+  const [thumbnailUrl, setThumbnailUrl] = useState('')
+
+  useEffect(() => {
+    console.log(classJson)
+    const thumbnailImage = classJson.videoDetails.image;
+    const dummyImagePW = `https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/d34a0325-deab-4031-a8fa-03d840ea0c5d.jpeg`
+    thumbnailImage == undefined ? setThumbnailUrl(dummyImagePW) : setThumbnailUrl(thumbnailImage.baseUrl + thumbnailImage.key)
+  }, [classJson])
+  return (<div className="ease-in-out duration-500 flex hover:scale-105 hover:shadow-2xl bg-white dark:bg-[#494949] flex-col p-3 pb-0 rounded-md shadow-xl">
+    <div className="rounded-md shadow-xl">
+      <Image
+        className="rounded-md"
+        width={720}
+        height={360}
+        layout="responsive"
+        src={`/api/image-proxy?imageUrl=${thumbnailUrl}`}
+        alt={classJson.topic + " Thumbnail"}
+      />
+    </div>
+    <div className="flex py-3 justify-between items-center my-auto">
+      <div className="ease-in-out duration-[5ms] font-semibold text-xl m-2 w-fit">ok</div>
+      {/* <Link href={`/batches/${batchJson._id}`}>
+        <button className="font-poppins font-semibold p-2 px-5 bg-[#1a5ec5] border-2 border-[#1a5ec5] hover:border-[#1a5ec5] hover:bg-[#ffffff] hover:text-[#1a5ec5] ease-in-out duration-300 rounded-md drop-shadow-2xl text-white dark:hover:border-[#1a5ec5] dark:hover:bg-[#4b4b4b9c] dark:hover:text-white">Study Now</button>
+      </Link> */}
+    </div>
   </div>)
 }
 
@@ -25,10 +54,11 @@ export default function BatchView() {
   var { batchID } = router.query;
   const [batchDetails, setBatchDetails] = useState({});
   const [gotBatch, setGotBatch] = useState(false);
+  const [schedule, setSchedule] = useState();
   const [scheduleCards, setScheduleCards] = useState([]);
   // console.log(batchID);
 
-  const getScheduleFromAPI = async () => {
+  const getBatchDetails = async () => {
     var batchID = router.query.batchID;
     if (batchID == undefined) {
       setGotBatch(false);
@@ -55,13 +85,54 @@ export default function BatchView() {
     }
   }
 
+  var subIDs = [];
+  const getBatchSchedule = async () => {
+    const loginData = JSON.parse(localStorage.getItem("login-data"));
+    if (loginData === null || !loginData.hasOwnProperty("access_token")) {
+      localStorage.setItem("isLoggedIn", false);
+      router.push("/login");
+      return;
+    }
+    // console.log(subIDs)
+    subIDs.forEach(async (id) => {
+      const payload = {
+        batchID: batchID,
+        subID: id,
+        access_token: loginData.access_token
+      }
+      var r = await axios.post("/api/schedule", payload);
+      const sched = r.data.data;
+      var todaysSchedList = [];
+      sched.forEach((sche) => {
+        sche.schedules.forEach((sch) => {
+          var schDate = new Date(sch.date);
+          var today = new Date();
+          const todayDate = [today.getDate(), today.getMonth(), today.getFullYear()];
+          const schedDate = [schDate.getDate(), schDate.getMonth(), schDate.getFullYear()];
+          if (todayDate[0] == schedDate[0] && todayDate[1] == schedDate[1] && todayDate[2] == schedDate[2]) {
+            // console.log(sche);
+            todaysSchedList.push(<TodaysClass key={sch._id} classJson={sch} />);
+          }
+        })
+      })
+      console.log(todaysSchedList);
+      setSchedule(todaysSchedList);
+    })
+  }
+
   useEffect(() => {
     // var batchID = router.query.batchID;
     // console.log(batchID);
     if (!gotBatch) {
       // console.log("ok");
-      getScheduleFromAPI();
+      getBatchDetails();
     } else if (gotBatch && batchDetails) {
+      const subs = batchDetails.subjects;
+      // console.log(subs);
+      subs.forEach((item) => {
+        subIDs.push(item._id);
+      });
+      getBatchSchedule();
     }
   }, [gotBatch, batchID])
 
@@ -72,6 +143,7 @@ export default function BatchView() {
           <Navbar />
           <div className='font-bold font-poppins m-5 text-2xl ease-in-out duration-500'>{batchDetails.name}</div>
           <Subjects subjectsJson={batchDetails.subjects} />
+          {schedule}
         </div>
         : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>}
     </div>

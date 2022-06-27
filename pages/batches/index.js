@@ -14,7 +14,7 @@ export default function Batches() {
   const [batchCards, setBatchCards] = useState([]);
   const router = useRouter();
   const login = loggedIn();
-  console.log(login);
+  // console.log(login);
   if (!(typeof login == "undefined")) {
     if (!login) {
       setTimeout(() => {
@@ -71,7 +71,7 @@ export default function Batches() {
     <div>
       {login ? (
         <div>
-          <Navbar search={(e) => {searchHandler(e)}} />
+          <Navbar search={(e) => { searchHandler(e) }} />
           <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
             {/* <Buttons /> */}
             <div className="flex flex-row p-2 justify-end"></div>
