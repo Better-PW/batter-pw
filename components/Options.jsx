@@ -65,7 +65,7 @@ export default function Options(props) {
         <div>
           <div className="dropdown relative">
             <button onClick={toggleDropdown}
-              className="dropdown-toggle mt-1 h-10 w-24 px-3 bg-[#1a5ec5] text-white font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Options
+              className="dropdown-toggle mt-[1.5px] h-10 w-24 px-3 py-[21.7px] bg-[#1a5ec5] text-white font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Options
               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" className="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                 <path
                   fill="currentColor"
@@ -75,13 +75,13 @@ export default function Options(props) {
             </button>
             <ul
               id="list-toggle"
-              className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton1">
+              className="dropdown-menu min-w-max absolute bg-white dark:bg-[#363636] ease-in-out duration-500 text-base z-50 float-left list-none text-left rounded-[3px] shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton1">
               <li>
                 <a onClick={clickOption}
-                  className=" dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">{batchPage ? "Developers" : "Batches"}</a>
+                  className="dropdown-item text-sm py-2 px-2 text-center font-normal block w-full rounded-[3px] whitespace-nowrap text-gray-700 hover:bg-gray-300 dark:bg-[#363636] dark:hover:bg-black dark:text-white ease-in-out duration-300" href="#">{batchPage ? "Developers" : "Batches"}</a>
               </li>
               <li>
-                <a className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-red-400 hover:bg-gray-100" href="#">Log out</a
+                <a className="dropdown-item text-sm py-2 px-4 text-center font-normal block w-full whitespace-nowrap rounded-[3px] text-red-400 hover:bg-red-500 dark:bg-[#363636] dark:text-red-500 dark:hover:bg-red-500 dark:hover:text-white hover:text-white ease-in-out duration-300" href="#">Log out</a
                 >
               </li>
             </ul>
