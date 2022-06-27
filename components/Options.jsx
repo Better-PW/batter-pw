@@ -38,18 +38,12 @@ export default function Options(props) {
           />
         </div>
       </form>
-      {/*Settings Button*/}
-      <div className="ml-2 pt-[1px]">
-        <button onClick={filterClick} className={`${styles.filterBtn}`}>
-          <span className={styles.filterText}>SETTINGS</span>
-        </button>
-      </div>
       {/* Dropdown options */}
       <div class="flex justify-center ml-2">
         <div>
           <div class="dropdown relative">
             <button onClick={toggleDropdown}
-              class="dropdown-toggle h-10 w-24 px-3 bg-[#1a5ec5] text-white font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Options
+              class="dropdown-toggle mt-1 h-10 w-24 px-3 bg-[#1a5ec5] text-white font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Options
               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                 <path
                   fill="currentColor"
