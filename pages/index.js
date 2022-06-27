@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
   const login = loggedIn();
   if (!(typeof login == "undefined")) {
-    console.log(login);
+    // console.log(login);
     if (login) {
       router.push("/batches");
     }

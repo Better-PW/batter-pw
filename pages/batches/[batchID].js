@@ -21,27 +21,28 @@ const Subjects = ({ subjectsJson }) => {
 }
 
 const TodaysClass = ({ classJson }) => {
-  const [thumbnailUrl, setThumbnailUrl] = useState('')
+  // const [thumbnailUrl, setThumbnailUrl] = useState('')
 
-  useEffect(() => {
-    console.log(classJson)
-    const thumbnailImage = classJson.videoDetails.image;
-    const dummyImagePW = `https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/d34a0325-deab-4031-a8fa-03d840ea0c5d.jpeg`
-    thumbnailImage == undefined ? setThumbnailUrl(dummyImagePW) : setThumbnailUrl(thumbnailImage.baseUrl + thumbnailImage.key)
-  }, [classJson])
-  return (<div className="ease-in-out duration-500 flex hover:scale-105 hover:shadow-2xl bg-white dark:bg-[#494949] flex-col p-3 pb-0 rounded-md shadow-xl">
+  // useEffect(() => {
+  //   console.log(classJson)
+  //   const thumbnailImage = classJson.image || classJson.videoDetails.image;
+  //   const dummyImagePW = `https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/d34a0325-deab-4031-a8fa-03d840ea0c5d.jpeg`
+  //   thumbnailImage == undefined ? setThumbnailUrl(dummyImagePW) : setThumbnailUrl(thumbnailImage.baseUrl + thumbnailImage.key)
+  // }, [classJson])
+  return (<div className="m-3 cursor-pointer max-w-md ease-in-out duration-500 flex hover:scale-105 hover:shadow-2xl bg-white dark:bg-[#2a2a2a] flex-col p-3 pb-0 rounded-md shadow-xl">
     <div className="rounded-md shadow-xl">
       <Image
         className="rounded-md"
         width={720}
         height={360}
         layout="responsive"
-        src={`/api/image-proxy?imageUrl=${thumbnailUrl}`}
+        // src={`/api/image-proxy?imageUrl=${thumbnailUrl}`}
+        src={`/api/image-proxy?imageUrl=${classJson.videoDetails.image}`}
         alt={classJson.topic + " Thumbnail"}
       />
     </div>
     <div className="flex py-3 justify-between items-center my-auto">
-      <div className="ease-in-out duration-[5ms] font-semibold text-xl m-2 w-fit">ok</div>
+      <div className="ease-in-out duration-[5ms] font-semibold text-xl m-2 w-fit">{classJson.topic}</div>
       {/* <Link href={`/batches/${batchJson._id}`}>
         <button className="font-poppins font-semibold p-2 px-5 bg-[#1a5ec5] border-2 border-[#1a5ec5] hover:border-[#1a5ec5] hover:bg-[#ffffff] hover:text-[#1a5ec5] ease-in-out duration-300 rounded-md drop-shadow-2xl text-white dark:hover:border-[#1a5ec5] dark:hover:bg-[#4b4b4b9c] dark:hover:text-white">Study Now</button>
       </Link> */}
@@ -54,8 +55,8 @@ export default function BatchView() {
   var { batchID } = router.query;
   const [batchDetails, setBatchDetails] = useState({});
   const [gotBatch, setGotBatch] = useState(false);
-  const [schedule, setSchedule] = useState();
   const [scheduleCards, setScheduleCards] = useState([]);
+  const [kitneClassThe, setKitneClassThe] = useState(0); // Sholay refrence?
   // console.log(batchID);
 
   const getBatchDetails = async () => {
@@ -94,6 +95,7 @@ export default function BatchView() {
       return;
     }
     // console.log(subIDs)
+    var todaysSchedList = [];
     subIDs.forEach(async (id) => {
       const payload = {
         batchID: batchID,
@@ -102,21 +104,27 @@ export default function BatchView() {
       }
       var r = await axios.post("/api/schedule", payload);
       const sched = r.data.data;
-      var todaysSchedList = [];
       sched.forEach((sche) => {
+        // console.log(sche);
         sche.schedules.forEach((sch) => {
+          // console.log(sch);
           var schDate = new Date(sch.date);
           var today = new Date();
           const todayDate = [today.getDate(), today.getMonth(), today.getFullYear()];
           const schedDate = [schDate.getDate(), schDate.getMonth(), schDate.getFullYear()];
           if (todayDate[0] == schedDate[0] && todayDate[1] == schedDate[1] && todayDate[2] == schedDate[2]) {
-            // console.log(sche);
-            todaysSchedList.push(<TodaysClass key={sch._id} classJson={sch} />);
+            if (sch.videoDetails) {
+              // console.log(sch);
+              todaysSchedList.push(<TodaysClass key={sch._id} classJson={sch} />);
+            }
           }
         })
       })
-      console.log(todaysSchedList);
-      setSchedule(todaysSchedList);
+      if (todaysSchedList.length > 0 && todaysSchedList.length > kitneClassThe) {
+        // console.log(todaysSchedList);
+        setScheduleCards(todaysSchedList);
+        setKitneClassThe(todaysSchedList.length);
+      }
     })
   }
 
@@ -143,7 +151,9 @@ export default function BatchView() {
           <Navbar />
           <div className='font-bold font-poppins m-5 text-2xl ease-in-out duration-500'>{batchDetails.name}</div>
           <Subjects subjectsJson={batchDetails.subjects} />
-          {schedule}
+          <div className='grid grid-cols-3'>
+            {scheduleCards}
+          </div>
         </div>
         : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>}
     </div>
