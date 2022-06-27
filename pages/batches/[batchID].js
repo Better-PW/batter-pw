@@ -11,11 +11,11 @@ const Subjects = ({ subjectsJson }) => {
   if (subjectsJson == undefined) { return <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div> }
   subjectsJson.forEach((item) => {
     s.push(
-      <div key={item.subject} className="flex w-fill mx-2 rounded-md cursor-pointer  bg-white  dark:bg-[#2a2a2a]  justify-between items-center my-auto ease-in-out duration-500 hover:scale-105 hover:shadow-2xl">
+      <div key={item.subject} className="flex w-fill mx-2 shadow-xl rounded-md cursor-pointer  bg-white  dark:bg-[#2a2a2a]  justify-between items-center my-auto ease-in-out duration-500 hover:scale-105 hover:shadow-2xl">
         <div className="font-semibold text-xl m-2 w-fit">{item.subject}</div>
       </div>)
   });
-  return (<div className="w-fit flex mx-4 px-3 rounded-md shadow-xl">
+  return (<div className="w-fit flex mx-4 px-3">
     {s}
   </div>)
 }
@@ -70,7 +70,7 @@ export default function BatchView() {
       {batchDetails ?
         <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
           <Navbar />
-          <div className='font-bold font-poppins m-5 text-2xl'>{batchDetails.name}</div>
+          <div className='font-bold font-poppins m-5 text-2xl ease-in-out duration-500'>{batchDetails.name}</div>
           <Subjects subjectsJson={batchDetails.subjects} />
         </div>
         : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>}
