@@ -57,7 +57,7 @@ export default function Toggler() {
   }
 
   return (
-    <div className="hover:cursor-pointer scale-95 ease-in-out duration-500 pt-1">
+    <div className="hover:cursor-pointer scale-95 ease-in-out duration-[60ms] pt-1">
       <FontAwesomeIcon
         className="p-1"
         size="2x"

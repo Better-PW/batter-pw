@@ -8,7 +8,7 @@ export default function Developers(){
     return (
         <>
         <div className="bg-white dark:bg-black ease-in-out duration-500">
-          <Navbar />
+          <Navbar/>
           <h1 className="text-3xl text-center w-full mt-10 tracking-wider"><a className="font-bold" href="https://discord.gg/fWJ9n3nwQu" target="_blank">BETTER PW</a> DEVELOPERS</h1>
           <p className="text-center mt-5 text-gray-700 dark:text-gray-500 font-bold">Better PW is an un-offical project by made by students for students</p>
           {/* <div className="flex items-center justify-center"><Image className="" src="/media/beaches.png" width={300} height={300} /></div> */}
