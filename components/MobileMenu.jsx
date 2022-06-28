@@ -1,5 +1,5 @@
 import React from "react";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +17,6 @@ export default function MobileMenu() {
         if (router.pathname === "/batches") {
             setBatchPage(true)
         } else {
-            document.querySelector("#simple-search").classList.add("hidden")
             setBatchPage(false)
         }
     })
