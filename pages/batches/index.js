@@ -1,6 +1,5 @@
 import axios from "axios";
 import Batch from "../../components/Batch";
-// import Buttons from '../components/Buttons';
 import Navbar from "../../components/navbar";
 import Options from "../../components/Options";
 import loggedIn from "../../components/LoggedIn";
@@ -12,8 +11,29 @@ export default function Batches() {
   const [gotBatches, setGotBatches] = useState(false);
   const [myBatches, setMyBatches] = useState([]);
   const [batchCards, setBatchCards] = useState([]);
+  const [onMobile, setMobile] = useState();
   const router = useRouter();
   const login = loggedIn();
+
+  useEffect(() => {
+    var screenWidth = document.body.clientWidth;
+    if (screenWidth < 900) {
+        setMobile(true)
+    } else {
+        setMobile(false)
+    }
+
+    window.addEventListener("resize", () => {
+        screenWidth = document.body.clientWidth;
+        if (screenWidth < 830) {
+            setMobile(true)
+        } else {
+            setMobile(false)
+        }
+    })
+})
+
+  
   // console.log(login);
   if (!(typeof login == "undefined")) {
     if (!login) {
@@ -75,9 +95,19 @@ export default function Batches() {
           <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
             {/* <Buttons /> */}
             <div className="flex flex-row p-2 justify-end"></div>
-            <div className="mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
+            {onMobile ?<>
+              <h1 className="text-center text-3xl mt-3 font-bold">MY BATCHES</h1>
+              <div className="mx-auto w-11/11 px-8 mt-20 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
+                {batchCards}
+              </div>
+              </> :
+              <div className="mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
+                {batchCards}
+              </div>
+            }
+            {/* <div className="mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
               {batchCards}
-            </div>
+            </div> */}
           </div>
         </div>
       ) : (

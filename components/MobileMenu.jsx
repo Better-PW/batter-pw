@@ -3,6 +3,7 @@ import Router, { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import Toggler from "./Toggler";
 
 export default function MobileMenu() {
     const router = useRouter();
@@ -39,6 +40,10 @@ export default function MobileMenu() {
             <ul
               id="list-toggle"
               className="dropdown-menu min-w-max absolute bg-white dark:bg-[#363636] ease-in-out duration-500 text-base z-50 float-left list-none text-left rounded-[3px] shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton1">
+                <li>
+                <a className="dropdown-item text-sm py-2 px-2 text-center font-normal block w-full rounded-[3px] whitespace-nowrap text-gray-700 hover:bg-gray-300 dark:bg-[#363636] dark:hover:bg-black dark:text-white ease-in-out duration-300" href="#"><Toggler /></a
+                >
+              </li>
               <li>
                 <a onClick={clickOption}
                   className="dropdown-item text-sm py-2 px-2 text-center font-normal block w-full rounded-[3px] whitespace-nowrap text-gray-700 hover:bg-gray-300 dark:bg-[#363636] dark:hover:bg-black dark:text-white ease-in-out duration-300" href="#">{batchPage ? "Developers" : "Batches"}</a>

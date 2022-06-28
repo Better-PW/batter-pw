@@ -62,8 +62,8 @@ export default function Navbar(props) {
                     {onMobile ? 
                     // if on mobile
                     <> 
-                    <div style={{margin: "auto"}} className="toggler mx-auto"><Toggler /></div> 
-                    <MobileMenu />
+                    {/* <div style={{margin: "auto"}} className="toggler mx-auto"><Toggler /></div> */}
+                    <div className="mobileMenu ml-auto"><MobileMenu /></div>
                     </> : 
                     // if not on mobile
                     <Options handleChange={props.search} />}
