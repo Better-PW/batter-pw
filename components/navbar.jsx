@@ -5,12 +5,13 @@ import GetTheme from './GetTheme';
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
+import Toggler from './Toggler';
+import MobileMenu from './MobileMenu';
 
 export default function Navbar(props) {
     const [theme, setTheme] = useState("dark");
     useEffect(() => { // set theme on local storage change (image src update)
         var themeLocal = GetTheme();
-        // console.log(themeLocal);
         if (themeLocal != undefined) {
             if (themeLocal == "system") { setTheme("dark") }
             else { setTheme(themeLocal || "dark"); }
@@ -29,7 +30,6 @@ export default function Navbar(props) {
 
     useEffect(() => {
         var screenWidth = document.body.clientWidth;
-        // console.log(screenWidth);
         if (screenWidth < 900) {
             setMobile(true)
         } else {
@@ -38,7 +38,6 @@ export default function Navbar(props) {
 
         window.addEventListener("resize", () => {
             screenWidth = document.body.clientWidth;
-            // console.log(screenWidth);
             if (screenWidth < 830) {
                 setMobile(true)
             } else {
@@ -47,6 +46,12 @@ export default function Navbar(props) {
         })
     })
 
+    function kebabToggle(){
+        const options = document.querySelector(".options");
+        options.classList.toggle("hidden")
+        options.classList.toggle("block")
+    }
+
 
     return (
         <nav>
@@ -54,9 +59,19 @@ export default function Navbar(props) {
                 <ul className='flex flex-row text-center items-center font-poppins pt-1'>
                     <li className='justify-self-end pl-5 pr-5 dark:invert ease-in-out duration-500'><Image src="/media/pw.png" width={40} height={40} /></li>
                     {onMobile ? <li className='text-3xl font-semibold tracking-widest hidden'>PHYSICS WALLAH</li> : <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>}
-                    {onMobile ? <FontAwesomeIcon style={{ fontSize: "25px", marginLeft: "auto" }} icon={faEllipsisVertical} /> : <Options handleChange={props.search} />}
+                    {onMobile ? 
+                    // if on mobile
+                    <> 
+                    <div style={{margin: "auto"}} className="toggler mx-auto"><Toggler /></div> 
+                    <MobileMenu />
+                    </> : 
+                    // if not on mobile
+                    <Options handleChange={props.search} />}
                 </ul>
             </div>
         </nav>
     )
 }
+
+
+{/* <FontAwesomeIcon onClick={kebabToggle} style={{ fontSize: "25px", marginLeft: "auto" }} icon={faEllipsisVertical} /> */}

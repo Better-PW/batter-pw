@@ -42,7 +42,7 @@ export default function Options(props) {
   }
 
   return (
-    <div className="pt-3 flex justify-end pb-3.5 ml-auto">
+    <div className={`pt-3 flex justify-end pb-3.5 ml-auto ${props.class}`}>
       {/*Toggle Dark Mode*/}
       <Toggler />
       {/*Search Bar*/}
