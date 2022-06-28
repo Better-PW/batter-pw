@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function AvatarCard(props) {
     return (
-        <div className="hover:scale-105 ml-5 card bg-slate-100 ease-in-out duration-500 flex flex-col items-center justify-center p-4  shadow-lg rounded-2xl w-[350px] dark:bg-gray-800">
-            <div className="main grid place-items-center h-alf">
+        <div className="m-2 hover:scale-105 card bg-slate-100 ease-in-out duration-500 flex flex-col items-center justify-center p-4  shadow-lg rounded-2xl dark:bg-gray-800">
+            <div className="main flex flex-col justify-evenly place-items-center h-alf">
                 {/* profile picture */}
-                <div className="profile mx-auto rounded-full py-2 w-20 ">
+                <div className="profile mx-auto rounded-full py-2 w-2/3 ">
                     <Image className="rounded-full" src={props.src} width={200} height={200} />
                 </div>
                 {/* Name */}
@@ -14,7 +14,7 @@ export default function AvatarCard(props) {
                     <p>{props.name}</p>
                 </div>
                 {/* work done */}
-                <div className="work text-gray-700 mt-4 ease-in-out duration-500 dark:text-gray-500">
+                <div className="work text-gray-700 my-2 ease-in-out duration-500 dark:text-gray-500">
                     <p>{props.work}</p>
                 </div>
                 {/* github link */}
