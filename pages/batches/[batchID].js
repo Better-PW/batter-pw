@@ -11,7 +11,7 @@ import Image from 'next/image';
 const Subjects = ({ subjectsJson }) => {
   console.log(subjectsJson);
   var subs = [];
-  if (subjectsJson == undefined) { return <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div> }
+  if (subjectsJson == undefined) { return <div className='font-bold font-poppins ml-10 m-5 text-2xl'>Loading...</div> }
   subjectsJson.forEach((item) => {
     subs.push(
       <div className="font-semibold py-3 px-2 truncate text-xl text-center shadow-xl rounded-md cursor-pointer bg-white dark:bg-[#2a2a2a]  ease-in-out duration-500 hover:scale-105 hover:shadow-2xl">
@@ -157,7 +157,7 @@ export default function BatchView() {
       {batchDetails ?
         <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
           <Navbar />
-          <div className="backButton ml-4 mt-5 text-2xl hover:cursor-pointer"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
+          <div className="backButton ml-10 mt-5 text-2xl hover:cursor-pointer"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
           <div className='font-bold font-poppins m-5 text-2xl ease-in-out duration-500'>{batchDetails.name}</div>
           <Subjects subjectsJson={batchDetails.subjects} />
           {scheduleCards.length>0? <div className='m-10 grid xl:grid-cols-4 lg"grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
