@@ -12,9 +12,6 @@ import Developers from "../pages/developers";
 import Link from "next/link";
 
 export default function Options(props) {
-  function filterClick() {
-    alert("No settings yet.");
-  }
 
   function toggleDropdown() {
     document.querySelector("#list-toggle").classList.toggle("hidden")
