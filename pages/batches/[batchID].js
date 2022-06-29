@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const Subjects = ({ subjectsJson }) => {
-  // console.log(subjectsJson);
+  console.log(subjectsJson);
   var subs = [];
   if (subjectsJson == undefined) { return <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div> }
   subjectsJson.forEach((item) => {
@@ -151,9 +151,9 @@ export default function BatchView() {
           <Navbar />
           <div className='font-bold font-poppins m-5 text-2xl ease-in-out duration-500'>{batchDetails.name}</div>
           <Subjects subjectsJson={batchDetails.subjects} />
-          <div className='grid grid-cols-3'>
+          {scheduleCards.length>0? <div className='m-10 grid xl:grid-cols-4 lg"grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
             {scheduleCards}
-          </div>
+          </div> : <div className="m-10 text-xl">You dont have any lectures at the moment...</div> }
         </div>
         : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>}
     </div>
