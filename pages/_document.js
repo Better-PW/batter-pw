@@ -5,6 +5,8 @@ export default function Document() {
         <Html>
             <Head title='Better PW'>
                 <title>Better PW</title>
+                <meta name="description" content="Better PW | PW website but with better new feature, for the students by the students :)" />
+
                 {/* discord embed */}
                 <meta property="og:title" content="Better PW" />
                 <meta property="og:type" content="website" />
