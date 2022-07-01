@@ -148,7 +148,7 @@ export default function BatchView() {
                     <Navbar />
                     <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
                         <div className='flex flex-row'>
-                            <div className="backButton mx-10 text-2xl hover:cursor-pointer pt-5"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
+                            <div className="backButton mx-10 text-2xl hover:cursor-pointer pt-5"><FontAwesomeIcon onClick={() => { router.back() }} icon={faArrowLeft} /></div>
                             {aajKiLiveClass ? <div className='font-bold font-poppins my-5 text-2xl '>{aajKiLiveClass.topic}</div> : <div className="m-10 text-xl">Loading Live Lecture...</div>}
                         </div>
                         {aajKiLiveClass ? <div>
