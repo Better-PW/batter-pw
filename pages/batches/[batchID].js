@@ -9,17 +9,17 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const Subjects = ({ subjectsJson }) => {
-  console.log(subjectsJson);
+  // console.log(subjectsJson);
   var subs = [];
   if (subjectsJson == undefined) { return <div className='font-bold font-poppins ml-10 m-5 text-2xl'>Loading...</div> }
   subjectsJson.forEach((item) => {
     subs.push(
-      <div className="font-semibold py-3 px-2 truncate text-xl text-center shadow-xl rounded-md cursor-pointer bg-white dark:bg-[#2a2a2a]  ease-in-out duration-500 hover:scale-105 hover:shadow-2xl">
+      <div className="ease-in-out duration-500 font-semibold py-3 px-2 truncate text-xl text-center shadow-xl rounded-md cursor-pointer bg-white dark:bg-[#2a2a2a]  hover:scale-105 hover:shadow-2xl text-black dark:text-white ">
         {item.subject}
-        </div>
+      </div>
     )
   });
-  return (<div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-4 px-3 gap-2">
+  return (<div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-4 px-3 gap-2 ">
     {subs}
   </div>)
 }
@@ -46,7 +46,7 @@ const TodaysClass = ({ classJson }) => {
       />
     </div>
     <div className="flex py-3 justify-between items-center my-auto">
-      <div className="ease-in-out duration-[5ms] font-semibold text-xl m-2 w-fit">{classJson.topic}</div>
+      <div className="ease-in-out duration-500 font-semibold text-xl m-2 w-fit text-black dark:text-white">{classJson.topic}</div>
       {/* <Link href={`/batches/${batchJson._id}`}>
         <button className="font-poppins font-semibold p-2 px-5 bg-[#1a5ec5] border-2 border-[#1a5ec5] hover:border-[#1a5ec5] hover:bg-[#ffffff] hover:text-[#1a5ec5] ease-in-out duration-300 rounded-md drop-shadow-2xl text-white dark:hover:border-[#1a5ec5] dark:hover:bg-[#4b4b4b9c] dark:hover:text-white">Study Now</button>
       </Link> */}
@@ -148,21 +148,24 @@ export default function BatchView() {
     }
   }, [gotBatch, batchID])
 
-  function redirect(){
+  function redirect() {
     router.push("/batches")
   }
 
   return (
     <div>
       {batchDetails ?
-        <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
+        <div>
           <Navbar />
-          <div className="backButton ml-10 mt-5 text-2xl hover:cursor-pointer"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
-          <div className='font-bold font-poppins m-5 text-2xl ease-in-out duration-500'>{batchDetails.name}</div>
-          <Subjects subjectsJson={batchDetails.subjects} />
-          {scheduleCards.length>0? <div className='m-10 grid xl:grid-cols-4 lg"grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
-            {scheduleCards}
-          </div> : <div className="m-10 text-xl">You dont have any lectures at the moment...</div> }
+          <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
+            <div className="backButton ml-10 text-2xl hover:cursor-pointer pt-5"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
+            <div className='font-bold font-poppins m-5 text-2xl '>{batchDetails.name}</div>
+            {/* <Subjects subjectsJson={batchDetails.subjects} /> */}
+            <div className='font-bold text-2xl m-5'>Todays Schedule...</div>
+            {scheduleCards.length > 0 ? <div className='m-5 grid xl:grid-cols-4 lg"grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
+              {scheduleCards}
+            </div> : <div className="m-10 text-xl">You dont have any lectures at the moment...</div>}
+          </div>
         </div>
         : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>}
     </div>

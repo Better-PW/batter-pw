@@ -18,22 +18,22 @@ export default function Batches() {
   useEffect(() => {
     var screenWidth = document.body.clientWidth;
     if (screenWidth < 900) {
-        setMobile(true)
+      setMobile(true)
     } else {
-        setMobile(false)
+      setMobile(false)
     }
 
     window.addEventListener("resize", () => {
-        screenWidth = document.body.clientWidth;
-        if (screenWidth < 830) {
-            setMobile(true)
-        } else {
-            setMobile(false)
-        }
+      screenWidth = document.body.clientWidth;
+      if (screenWidth < 830) {
+        setMobile(true)
+      } else {
+        setMobile(false)
+      }
     })
-})
+  })
 
-  
+
   // console.log(login);
   if (!(typeof login == "undefined")) {
     if (!login) {
@@ -94,13 +94,13 @@ export default function Batches() {
           <Navbar search={(e) => { searchHandler(e) }} />
           <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
             {/* <Buttons /> */}
-            <div className="flex flex-row p-2 justify-end"></div>
-            {onMobile ?<>
-              <h1 className="text-center text-3xl mt-3 font-bold">MY BATCHES</h1>
-              <div className="mx-auto w-11/11 px-8 mt-20 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
+            <div className="flex flex-row justify-end"></div>
+            {onMobile ? <>
+              <h1 className="text-center text-3xl my-5 font-bold">MY BATCHES</h1>
+              <div className="mx-auto w-11/11 px-8   grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
                 {batchCards}
               </div>
-              </> :
+            </> :
               <div className="mx-auto w-11/11 px-8 my-10 grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 gap-10">
                 {batchCards}
               </div>

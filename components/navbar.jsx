@@ -46,7 +46,7 @@ export default function Navbar(props) {
         })
     })
 
-    function kebabToggle(){
+    function kebabToggle() {
         const options = document.querySelector(".options");
         options.classList.toggle("hidden")
         options.classList.toggle("block")
@@ -59,14 +59,14 @@ export default function Navbar(props) {
                 <ul className='flex flex-row text-center items-center font-poppins pt-1'>
                     <li className='justify-self-end pl-5 pr-5 dark:invert ease-in-out duration-500'><Image src="/media/pw.png" width={40} height={40} /></li>
                     {onMobile ? <li className='text-3xl font-semibold tracking-widest hidden'>PHYSICS WALLAH</li> : <li className='text-3xl font-semibold tracking-widest'>PHYSICS WALLAH</li>}
-                    {onMobile ? 
-                    // if on mobile
-                    <> 
-                    {/* <div style={{margin: "auto"}} className="toggler mx-auto"><Toggler /></div> */}
-                    <div className="mobileMenu ml-auto"><MobileMenu /></div>
-                    </> : 
-                    // if not on mobile
-                    <Options handleChange={props.search} />}
+                    {onMobile ?
+                        // if on mobile
+                        <>
+                            {/* <div style={{margin: "auto"}} className="toggler mx-auto"><Toggler /></div> */}
+                            <div className="mobileMenu ml-auto"><MobileMenu /></div>
+                        </> :
+                        // if not on mobile
+                        <Options handleChange={props.search} />}
                 </ul>
             </div>
         </nav>
@@ -74,4 +74,4 @@ export default function Navbar(props) {
 }
 
 
-{/* <FontAwesomeIcon onClick={kebabToggle} style={{ fontSize: "25px", marginLeft: "auto" }} icon={faEllipsisVertical} /> */}
+{/* <FontAwesomeIcon onClick={kebabToggle} style={{ fontSize: "25px", marginLeft: "auto" }} icon={faEllipsisVertical} /> */ }
