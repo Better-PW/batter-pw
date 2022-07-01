@@ -151,8 +151,8 @@ export default function BatchView() {
                             <div className="backButton mx-10 text-2xl hover:cursor-pointer pt-5"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
                             {aajKiLiveClass ? <div className='font-bold font-poppins my-5 text-2xl '>{aajKiLiveClass.topic}</div> : <div className="m-10 text-xl">Loading Live Lecture...</div>}
                         </div>
-                        {aajKiLiveClass ? <div className='m-5 grid xl:grid-cols-4 lg"grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
-                            <iframe src={aajKiLiveClass.videoDetails.embedCode} className="mx-5"></iframe>
+                        {aajKiLiveClass ? <div>
+                            <iframe src={aajKiLiveClass.videoDetails.embedCode} className="px-5 aspect-video w-full md:w-3/4" ></iframe>
                         </div> : <div className="m-10 text-xl">Loading Live Lecture...</div>}
                     </div>
                 </div>
