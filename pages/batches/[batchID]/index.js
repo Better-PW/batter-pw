@@ -1,39 +1,41 @@
-import Navbar from '../../components/navbar';
-import ClassCard from '../../components/ClassCard';
+import Navbar from '../../../components/navbar';
+// import ClassCard from '../../../components/ClassCard';
 import axios from 'axios';
-import Spinner from '../../components/spinner';
+// import Spinner from '../../../components/spinner';
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Router, useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const Subjects = ({ subjectsJson }) => {
-  // console.log(subjectsJson);
-  var subs = [];
-  if (subjectsJson == undefined) { return <div className='font-bold font-poppins ml-10 m-5 text-2xl'>Loading...</div> }
-  subjectsJson.forEach((item) => {
-    subs.push(
-      <div className="ease-in-out duration-500 font-semibold py-3 px-2 truncate text-xl text-center shadow-xl rounded-md cursor-pointer bg-white dark:bg-[#2a2a2a]  hover:scale-105 hover:shadow-2xl text-black dark:text-white ">
-        {item.subject}
-      </div>
-    )
-  });
-  return (<div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-4 px-3 gap-2 ">
-    {subs}
-  </div>)
-}
+// const Subjects = ({ subjectsJson }) => {
+//   // console.log(subjectsJson);
+//   var subs = [];
+//   if (subjectsJson == undefined) { return <div className='font-bold font-poppins ml-10 m-5 text-2xl'>Loading...</div> }
+//   subjectsJson.forEach((item) => {
+//     subs.push(
+//       <div className="ease-in-out duration-500 font-semibold py-3 px-2 truncate text-xl text-center shadow-xl rounded-md cursor-pointer bg-white dark:bg-[#2a2a2a]  hover:scale-105 hover:shadow-2xl text-black dark:text-white ">
+//         {item.subject}
+//       </div>
+//     )
+//   });
+//   return (<div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-4 px-3 gap-2 ">
+//     {subs}
+//   </div>)
+// }
 
 const TodaysClass = ({ classJson }) => {
   // const [thumbnailUrl, setThumbnailUrl] = useState('')
-
+  const router = useRouter();
+  // console.log(classJson);
   // useEffect(() => {
   //   console.log(classJson)
   //   const thumbnailImage = classJson.image || classJson.videoDetails.image;
   //   const dummyImagePW = `https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/d34a0325-deab-4031-a8fa-03d840ea0c5d.jpeg`
   //   thumbnailImage == undefined ? setThumbnailUrl(dummyImagePW) : setThumbnailUrl(thumbnailImage.baseUrl + thumbnailImage.key)
   // }, [classJson])
-  return (<div className="m-3 cursor-pointer max-w-md ease-in-out duration-500 flex hover:scale-105 hover:shadow-2xl bg-white dark:bg-[#2a2a2a] flex-col p-3 pb-0 rounded-md shadow-xl">
+  return (<div className="m-3 cursor-pointer max-w-md ease-in-out duration-500 flex hover:scale-105 hover:shadow-2xl bg-white dark:bg-[#2a2a2a] flex-col p-3 pb-0 rounded-md shadow-xl"
+    onClick={() => { console.log(router.asPath); router.push(router.asPath + "/" + classJson._id) }}>
     <div className="rounded-md shadow-xl">
       <Image
         className="rounded-md"
@@ -158,17 +160,20 @@ export default function BatchView() {
         <div>
           <Navbar />
           <div className="h-screen ease-in-out duration-500 bg-gray-100 dark:bg-[#121212]">
-            <div className="backButton ml-10 text-2xl hover:cursor-pointer pt-5"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
-            <div className='font-bold font-poppins m-5 text-2xl '>{batchDetails.name}</div>
+            <div className='flex flex-row'>
+              <div className="backButton mx-10 text-2xl hover:cursor-pointer pt-5"><FontAwesomeIcon onClick={redirect} icon={faArrowLeft} /></div>
+              <div className='font-bold font-poppins my-5 text-2xl '>{batchDetails.name}</div>
+            </div>
             {/* <Subjects subjectsJson={batchDetails.subjects} /> */}
-            <div className='font-bold text-2xl m-5'>Todays Schedule...</div>
+            <div className='font-bold text-2xl mx-10'>Todays Schedule...</div>
             {scheduleCards.length > 0 ? <div className='m-5 grid xl:grid-cols-4 lg"grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
               {scheduleCards}
             </div> : <div className="m-10 text-xl">You dont have any lectures at the moment...</div>}
           </div>
         </div>
-        : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>}
-    </div>
+        : <div className='font-bold font-poppins m-5 text-2xl'>Loading...</div>
+      }
+    </div >
   )
 }
 
