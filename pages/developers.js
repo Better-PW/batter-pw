@@ -17,7 +17,7 @@ export default function Developers() {
         <AvatarCard name="Vedansh" work="DevOps" gh="https://github.com/titan-codes" src="/media/vedansh.png" />
         <AvatarCard name="Rudransh" work="DevOps" gh="https://github.com/firehead90544" src="/media/rudra.png" />
         <AvatarCard name="Arnab" work="UI/UX Designer" gh="https://arnabhere.github.io/whoami/" src="/media/arnab.gif" />
-        <AvatarCard name="Arunava" work="UI/UX Designer" gh="https://its-ag.pages.dev/" src="/media/ag.png" />
+        <AvatarCard name="Arunava" work="UI/UX Designer" gh="https://arunava.tech/" src="/media/ag.png" />
       </div>
     </div>
   )
